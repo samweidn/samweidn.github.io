@@ -22,7 +22,11 @@ h5 {
 
 p,
 ul,
-li {
+li,
+th, 
+td, 
+label,
+.dt-input {
     color: white;
     font-family: "Open Sans", sans-serif;
 }
@@ -181,6 +185,12 @@ nav ul {
 
 .resume {
     height: 900px;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.dataTables{
     width: 900px;
     margin: 0 auto;
     margin-top: 10%;
