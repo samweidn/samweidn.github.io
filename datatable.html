@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samantha Weidner's Resume</title>
+    <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.9.0/css/rivet.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="styles.css">
 
@@ -25,9 +26,13 @@
 </head>
 
 <style>
-    
+
 .dataTables_wrapper {
     color: white;
+}
+
+thead{
+    background-color: rgba(150, 143, 143, 0);
 }
 
 .dataTables_wrapper table.dataTable thead th,
@@ -97,94 +102,103 @@ input.dt-input {
                     <th>Age</th>
                     <th>Start date</th>
                     <th>Salary</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr id="1">
                     <td>Tiger Nixon</td>
                     <td>System Architect</td>
                     <td>Edinburgh</td>
                     <td>61</td>
                     <td>2011-04-25</td>
                     <td>$320,800</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="2">
                     <td>Garrett Winters</td>
                     <td>Accountant</td>
                     <td>Tokyo</td>
                     <td>63</td>
                     <td>2011-07-25</td>
                     <td>$170,750</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="3">
                     <td>Ashton Cox</td>
                     <td>Junior Technical Author</td>
                     <td>San Francisco</td>
                     <td>66</td>
                     <td>2009-01-12</td>
                     <td>$86,000</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="4">
                     <td>Cedric Kelly</td>
                     <td>Senior Javascript Developer</td>
                     <td>Edinburgh</td>
                     <td>22</td>
                     <td>2012-03-29</td>
                     <td>$433,060</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="5">
                     <td>Airi Satou</td>
                     <td>Accountant</td>
                     <td>Tokyo</td>
                     <td>33</td>
                     <td>2008-11-28</td>
                     <td>$162,700</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="6">
                     <td>Brielle Williamson</td>
                     <td>Integration Specialist</td>
                     <td>New York</td>
                     <td>61</td>
                     <td>2012-12-02</td>
                     <td>$372,000</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="7">
                     <td>Herrod Chandler</td>
                     <td>Sales Assistant</td>
                     <td>San Francisco</td>
                     <td>59</td>
                     <td>2012-08-06</td>
                     <td>$137,500</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="8">
                     <td>Rhona Davidson</td>
                     <td>Integration Specialist</td>
                     <td>Tokyo</td>
                     <td>55</td>
                     <td>2010-10-14</td>
                     <td>$327,900</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="9">
                     <td>Colleen Hurst</td>
                     <td>Javascript Developer</td>
                     <td>San Francisco</td>
                     <td>39</td>
                     <td>2009-09-15</td>
                     <td>$205,500</td>
+                    <td class="btn"></td>
                 </tr>
-                <tr>
+                <tr id="10">
                     <td>Sonya Frost</td>
                     <td>Software Engineer</td>
                     <td>Edinburgh</td>
                     <td>23</td>
                     <td>2008-12-13</td>
                     <td>$103,600</td>
+                    <td class="btn"></td>
                 </tr>
             </tbody>
         </table>
     </div>
-
-
 
 </body>
 
@@ -192,9 +206,89 @@ input.dt-input {
 
 <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
 <script>
+
+function saveLine() {
+
+    //get the row that is being edited  
+    var editingRow = document.querySelector('.editing');
+
+    editingRow.classList.remove('editing');
+
+    $(editingRow).find('td').each(function () {
+
+        var input = $(this).find('input');
+        if (input.length > 0) {
+
+            var value = input.val();
+            $(this).text(value);
+        } else if ($(this).hasClass("btn")) {
+            $(this).html('');
+        }
+    });
+}
+
     $(document).ready(function() {
         $('#example').DataTable({
             paging: false,
         });
-    });
+
+        //GRAB The Tables
+        $('table').each(function(){
+            var table = $(this);
+                table.on('click', 'td', function (e) {
+                e.stopPropagation();
+
+                if ($(this).closest('tr').hasClass('editing')) {
+                    return;
+                }
+                var editRowId = this.closest('tr').getAttribute('id');
+                editLine(editRowId, table.attr("id"));
+            })
+        });
+ 
+ //MAKE The EDIT Line
+     function editLine(editingRowId, table) {
+       
+        if ($('table').find('.editing').length > 0) {
+            saveLine(editingRowId);
+            return;
+        }
+       
+        $(`#${editingRowId}`).addClass('editing');
+        var rowData = $(`#${table}`).DataTable().row(`#${editingRowId}`).data();
+        var counter = 0;
+
+        //Grab every td in the tr
+        $(`#${editingRowId}`).find('td').each(function () {
+
+            counter++;
+            console.log(counter);
+
+            if($(this).hasClass("noEdit")){
+                return;
+            }
+            else if ($(this).hasClass("btn")) {
+                var html = '<button id="saveButton" class="rvt-button--plain">Save</button>';
+                $(this).html(html);
+            }
+            else {
+                var value = rowData[counter - 1];
+                var dataType = typeof value;
+                $(this).html(`<input type="${dataType}" id="${name}" class="rvt-text-input" name="${name}" value="${value}" />`);
+            }
+
+        });
+
+        document.querySelector('#saveButton').addEventListener('click', function () {
+            saveLine();
+        });
+
+     }
+
+    window.onbeforeunload = function () {
+        if (document.getElementsByClassName("editing").length > 0) { return "Are you sure you want to leave?"; }
+        else { return; }
+    };
+
+});
 </script>
