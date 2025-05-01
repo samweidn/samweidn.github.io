@@ -99,8 +99,8 @@ input.dt-input {
     <main>
         <div class="txtSection topDiv">
             <h1 class="title">DataTable Inline Editor Example</h1>
-            <p class="subtitle">This is an example of an inline editing script that I wrote using JQuery and Javascript.</p>
-            <p class="subtitle">Click on a row to edit it, and click the "Save" button to save your changes. Alternatively, if you click on another row, your changes will be saved and you can begin to edit the other row.</p>
+            <p class="subtitle">This is an example of an inline editing script that I wrote using JQuery Datatables and Javascript.</p>
+            <p class="subtitle">Click on a row to edit it, and click the "Save" button to save your changes. Alternatively, if you click on another row, your changes will be saved and you can begin to edit the other row. When a user's changes are saved, I update the data on the datatable as well as updating the UI to reflect the change.</p>
         </div>
 
         <!--DataTable-->
@@ -217,23 +217,24 @@ input.dt-input {
             <h1 class="title">Code</h1>
             <code data-lang="Javascript">
             <span class="comment">// Function to save the line being edited</span>
-                function saveLine() {
-                    var editingRow = document.querySelector('.editing');
-
-                    editingRow.classList.remove('editing');
-
-                    $(editingRow).find('td').each(function () {
-
-                        var input = $(this).find('input');
-                        if (input.length > 0) {
-
-                            var value = input.val();
-                            $(this).text(value);
-                        } else if ($(this).hasClass("btn")) {
-                            $(this).html('');
-                        }
-                    });
-                }
+            function saveLine(table) { 
+                var editingRow = document.querySelector('.editing');
+                var rowData = $(`#${table}`).DataTable().row(`#${editingRow.getAttribute('id')}`).data();
+                var counter = 0;
+                editingRow.classList.remove('editing');
+    
+                $(editingRow).find('td').each(function () {
+                    counter++;
+                    var input = $(this).find('input');
+                    if (input.length > 0) {
+                        var value = input.val();
+                        rowData[counter - 1] = value; 
+                        $(this).text(value);
+                    } else if ($(this).hasClass("btn")) {
+                        $(this).html('');
+                    }
+                });
+            }
 
               <span class="comment">//Grabbing all of the tables to add the event listener to the td </span>
               <span class="comment">//so that when you click on a td it will make the line editable</span>
@@ -304,26 +305,6 @@ input.dt-input {
 <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
 <script>
 
-function saveLine() {
-
-    //get the row that is being edited  
-    var editingRow = document.querySelector('.editing');
-
-    editingRow.classList.remove('editing');
-
-    $(editingRow).find('td').each(function () {
-
-        var input = $(this).find('input');
-        if (input.length > 0) {
-
-            var value = input.val();
-            $(this).text(value);
-        } else if ($(this).hasClass("btn")) {
-            $(this).html('');
-        }
-    });
-}
-
     $(document).ready(function() {
         $('#example').DataTable({
             paging: false,
@@ -365,7 +346,7 @@ function saveLine() {
                 return;
             }
             else if ($(this).hasClass("btn")) {
-                var html = '<button id="saveButton" class="rvt-button--plain">Save</button>';
+                var html = '<button id="saveButton" class="rvt-button">Save</button>';
                 $(this).html(html);
             }
             else {
@@ -377,10 +358,31 @@ function saveLine() {
         });
 
         document.querySelector('#saveButton').addEventListener('click', function () {
-            saveLine();
+            saveLine(table);
         });
 
      }
+
+     function saveLine(table) {
+
+            //get the row that is being edited  
+            var editingRow = document.querySelector('.editing');
+            var rowData = $(`#${table}`).DataTable().row(`#${editingRow.getAttribute('id')}`).data();
+            var counter = 0;
+            editingRow.classList.remove('editing');
+
+            $(editingRow).find('td').each(function () {
+                counter++;
+                var input = $(this).find('input');
+                if (input.length > 0) {
+                    var value = input.val();
+                    rowData[counter - 1] = value; 
+                    $(this).text(value);
+                } else if ($(this).hasClass("btn")) {
+                    $(this).html('');
+                }
+            });
+        }
 
     window.onbeforeunload = function () {
         if (document.getElementsByClassName("editing").length > 0) { return "Are you sure you want to leave?"; }
