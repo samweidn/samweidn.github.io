@@ -51,7 +51,6 @@ h4 {
 
 li {
     font-size: 18px;
-
 }
 
 ul a {
@@ -352,24 +351,77 @@ section {
         font-size: 45px;
     }
 
+    ul a li {
+        font-size: 35px;
+    }
+
 
     /* Sections */
     main {
         max-width: fit-content;
-
     }
 
-    /* .hamburger {
-        display: block;
-    } */
+    .hamburger {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: fixed;
+        z-index: 1001;
+    }
+
+    .hamburger div {
+        height: 5px;
+        width: 100%;
+        background-color: whitesmoke;
+        border-radius: 10px;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        top: 25%;
+        position: absolute;
+        transform: translate(-50%, -50%) rotate(45deg);
+        animation: 3s;
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        top: 25%;
+        position: absolute;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
 
     .name {
         display: none;
     }
 
     nav {
+        display: none;
+    }
+
+    nav.show {
+        display: flex;
         flex-flow: nowrap;
+        padding-top: 25%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-bottom: none;
+        height: 100%;
+        width: 50%;
+        background-color: #2d2d2dd5;
+        left: 0px;
+    }
+
+    nav ul {
+        padding-right: 0px;
+        align-items: center;
         justify-content: center;
+        flex-direction: column;
     }
 
     .hi {
