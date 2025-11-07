@@ -14,7 +14,6 @@ h3,
 h4,
 h5 {
     font-family: "Cormorant", serif;
-    color: white;
 }
 
 p,
@@ -37,8 +36,6 @@ h2 {
     font-size: 45px;
     margin: 0;
 }
-
-
 
 h4 {
     font-size: 40px;
@@ -114,6 +111,12 @@ nav ul {
 
 /* FAMILY PAGE */
 
+.addNewCard {
+    display: flex;
+    align-items: center;
+    margin: 3.3rem;
+}
+
 .familyCardContainer {
     display: flex;
     gap: 1rem;
@@ -126,16 +129,44 @@ nav ul {
     padding: 16px;
 }
 
+.card-me {
+    flex-flow: row;
+}
+
+.cardMeContent {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.editProfile {
+    display: flex;
+    gap: 5px;
+    justify-content: end;
+    padding: 10px;
+}
+
 
 /**************************************************************************************
  Images 
  **************************************************************************************/
 
+.accountDiv div {
+    padding-right: .5rem;
+}
+
 .accountIconImage {
-    width: 15%;
+    width: 35%;
     border-radius: 50%;
 }
 
 .logo img {
     width: 25%;
+}
+
+/* Family Page */
+
+.profilePic {
+    width: 35%;
+    border-radius: 10%;
 }
