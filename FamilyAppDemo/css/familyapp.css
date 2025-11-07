@@ -75,7 +75,7 @@ main {
     margin: 8rem 0;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    /* align-items: center; */
     gap: 3rem;
 }
 
