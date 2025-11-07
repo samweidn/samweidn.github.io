@@ -1,0 +1,141 @@
+:root {}
+
+/***************************************************************************************
+ Typography 
+ ***************************************************************************************/
+
+/* General Typography */
+/* General Typography */
+
+/* color rgba(195, 82, 20) */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Cormorant", serif;
+    color: white;
+}
+
+p,
+ul,
+li,
+th,
+td,
+label,
+.dt-input {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Individual Styles */
+h1 {
+    font-size: 75px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 45px;
+    margin: 0;
+}
+
+
+
+h4 {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+li {
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul a {
+    text-decoration: none;
+}
+
+ul a li p {
+    font-family: "Cormorant", serif;
+    font-size: 12px;
+    color: black;
+}
+
+p {
+    line-height: 1.5rem;
+    font-size: 18px;
+}
+
+
+
+
+/**************************************************************************************
+ Section Styles 
+ *****************************************************************************************/
+main {
+    margin: 8rem 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgb(238, 237, 237);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.accountDiv {
+    text-align: right;
+}
+
+.accountDiv p {
+    margin: 0;
+}
+
+nav {
+    background-color: rgb(238, 237, 237);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+/* FAMILY PAGE */
+
+.familyCardContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-icons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: 16px;
+}
+
+
+/**************************************************************************************
+ Images 
+ **************************************************************************************/
+
+.accountIconImage {
+    width: 15%;
+    border-radius: 50%;
+}
+
+.logo img {
+    width: 25%;
+}
