@@ -74,6 +74,25 @@ p {
 /**************************************************************************************
  Section Styles 
  *****************************************************************************************/
+/* .phonescreen {
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+} 
+.fixed-bottom {
+    right: auto;
+    left: auto;
+    min-width: 400px;
+}
+
+.fixed-top {
+    right: auto;
+    left: auto;
+    min-width: 400px;
+} 
+*/
+
+
 main {
     margin: 8rem 0;
     display: flex;
@@ -88,6 +107,8 @@ header {
     padding: 1rem;
     background-color: rgb(238, 237, 237);
 }
+
+
 
 .logo {
     display: flex;
