@@ -58,9 +58,9 @@
                                     fill="#333333"></path>
                             </g>
                         </svg></a>
-                    <a href="calendarAlex.html" class="card-link"><svg width="45px" height="45px"
-                            viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                            fill="#000000">
+                    <a href="calendarPerson.html" class="card-link" onclick="getNameOfFamilyMember('Alex')"><svg
+                            width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -132,8 +132,9 @@
                                     fill="#333333"></path>
                             </g>
                         </svg></a>
-                    <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
-                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <a href="calendarPerson.html" class="card-link" onclick="getNameOfFamilyMember('Bob')">
+                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -179,11 +180,10 @@
             </div>
         </section>
         <section class="familyCardContainer">
-
             <div class="card">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Alex</h5>
+                    <h5 class="card-title">Andrew</h5>
                     <p class="card-text">New York City, NY USA</p>
                 </div>
                 <div class="card-icons">
@@ -209,8 +209,9 @@
                                     fill="#333333"></path>
                             </g>
                         </svg></a>
-                    <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
-                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <a href="calendarPerson.html" class="card-link" onclick="getNameOfFamilyMember('Andrew')">
+                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -407,3 +408,65 @@
 </body>
 
 </html>
+
+<script>
+
+    function getNameOfFamilyMember(name) {
+        sessionStorage.setItem("familyMemberName", name);
+        getFamilyMemberEvents(name);
+    }
+
+    function getFamilyMemberEvents(name) {
+
+        var familyMemberEvents = [];
+        let event1 = {};
+        let event2 = {};
+
+        if (name == 'Alex') {
+            event1 = {
+                eventName: 'Interview',
+                eventDate: 'Nov 21st, 2025',
+                eventDateValue: '2025-11-21'
+            };
+
+            event2 = {
+                eventName: `Thanksgiving @ Aunt Carol's`,
+                eventDate: 'Nov 30th, 2025',
+                eventDateValue: '2025-11-30'
+            };
+
+        } else if (name == 'Bob') {
+            event1 = {
+                eventName: 'Driver License Test',
+                eventDate: 'Nov 16th, 2025',
+                eventDateValue: '2025-11-16'
+            };
+
+            event2 = {
+                eventName: `Thanksgiving @ Aunt Carol's`,
+                eventDate: 'Nov 30th, 2025',
+                eventDateValue: '2025-11-30'
+            };
+
+        } else {
+            event1 = {
+                eventName: 'Soccer Game',
+                eventDate: 'Nov 10th, 2025',
+                eventDateValue: '2025-11-10'
+            };
+
+            event2 = {
+                eventName: `Thanksgiving @ Aunt Carol's`,
+                eventDate: 'Nov 30th, 2025',
+                eventDateValue: '2025-11-30'
+            };
+        }
+
+        familyMemberEvents.push(event1);
+        familyMemberEvents.push(event2);
+
+        const jsonFamilyMemberEvents = JSON.stringify(familyMemberEvents);
+        sessionStorage.setItem("jsonFamilyMemberEvents", jsonFamilyMemberEvents);
+    }
+
+</script>
