@@ -14,191 +14,195 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </head>
+<div class="phonescreen">
 
-<body>
-    <!-- HEADER -->
-    <header class="fixed-top">
-        <div class="logo">
-            <img src="images/Greenboy.png" alt="">
-        </div>
-        <div class="accountDiv">
-            <div>
-                <img class="accountIconImage" src="images/account.jpg" alt="">
+    <body>
+        <!-- HEADER -->
+        <header class="fixed-top">
+            <div class="logo">
+                <img src="images/Greenboy.png" alt="">
             </div>
-            <p>Account</p>
-        </div>
-    </header>
+            <div class="accountDiv">
+                <div>
+                    <img class="accountIconImage" src="images/account.jpg" alt="">
+                </div>
+                <p>Account</p>
+            </div>
+        </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="container">
-        <!-- MODAL FAMILY CARD -->
+        <!-- MAIN CONTENT -->
+        <main class="container">
+            <!-- MODAL FAMILY CARD -->
 
-        <div class="modal fade" id="familyCardModal" tabindex="-1" aria-labelledby="familyCardModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="familyCardModal_Title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <section class="familyCardModalProfilePicDiv pb-3">
-                            <img class="familyCardModalProfilePic" src="images/account.jpg" alt="">
-                        </section>
-                        <section class="familyModalSection_cols_2">
-                            <div>
-                                <p class="noMargin">
-                                    <span id="familyCardModalName">Sarah</span>
-                                    (<span id="familyCardModalRelation">Sister</span>)
-                                </p>
-                            </div>
-                            <div class="availableDiv">
-                                <span class="dot available"></span>
-                                <p class="noMargin" id="availability">Available</p>
-                            </div>
-                        </section>
-                        <section class="familyModalSection_cols_2 pt-3">
-                            <p class="noMargin">Location</p>
-                            <div class="availableDiv">
-                                <p class="noMargin">icon</p>
-                                <p class="noMargin" id="familyCardModalLocation">New York</p>
-                            </div>
-                        </section>
-                        <section class="familyModalSection_cols_2 pt-3">
-                            <div>
-                                <h4>Todays Weather</h4>
+            <div class="modal fade" id="familyCardModal" tabindex="-1" aria-labelledby="familyCardModal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="familyCardModal_Title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <section class="familyCardModalProfilePicDiv pb-3">
+                                <img class="familyCardModalProfilePic" src="images/account.jpg" alt="">
+                            </section>
+                            <section class="familyModalSection_cols_2">
                                 <div>
-                                    <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                        </g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <path
-                                                d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
-                                                fill="#F4CE26"></path>
-                                            <path
-                                                d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
-                                                fill="#333333"></path>
-                                            <path
-                                                d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
-                                                fill="#333333"></path>
-                                            <path
-                                                d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
-                                                fill="#FFFFFF"></path>
-                                            <path
-                                                d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
-                                                fill="#333333"></path>
-                                        </g>
-                                    </svg>
-                                    <p>50&#x00B0; Rain</p>
+                                    <p class="noMargin">
+                                        <span id="familyCardModalName">Sarah</span>
+                                        (<span id="familyCardModalRelation">Sister</span>)
+                                    </p>
                                 </div>
-                            </div>
-                            <div>
-                                <h4>Local News Headline</h4>
-                                <div>
-                                    <p>headline one</p>
-                                    <p>headline two</p>
-                                    <p>headline three</p>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="familyModalSection_cols_1 pt-3">
-                            <h4>Today's Schedule</h4>
-                            <div class="scheduleDiv pt-3">
-                                <p>Monday</p>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <th>Work: </th>
-                                            <td>9:00am - 5:30pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Yoga: </th>
-                                            <td>6:00pm - 7:00pm</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
-                        <section class="familyModalSection_cols_1 pt-3">
-                            <h4>Upcoming Events</h4>
-                            <div class="event">
                                 <div class="availableDiv">
-                                    <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                        </g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3">
-                                            </path>
-                                            <path
-                                                d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
-                                                fill="#300604"></path>
-                                            <path
-                                                d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
-                                                fill="#300604"></path>
-                                            <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604">
-                                            </path>
-                                            <path
-                                                d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
-                                                fill="#300604"></path>
-                                            <path
-                                                d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
-                                                fill="#300604"></path>
-                                            <path
-                                                d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
-                                                fill="#300604"></path>
-                                            <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                            <path
-                                                d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                                fill="#300604"></path>
-                                            <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                            <path
-                                                d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                                fill="#300604"></path>
-                                            <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                            <path
-                                                d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
-                                                fill="#228E9D"></path>
-                                            <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                            <path
-                                                d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
-                                                fill="#228E9D"></path>
-                                            <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
-                                            <path
-                                                d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
-                                                fill="#228E9D"></path>
-                                            <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
-                                        </g>
-                                    </svg>
-                                    <p class="noMargin">December 12, 2026</p>
+                                    <span class="dot available"></span>
+                                    <p class="noMargin" id="availability">Available</p>
                                 </div>
-                                <div class="ps-5">
-                                    <p class="noMargin">Interview at Market and James</p>
-                                    <span class="badge bg-secondary">Reminder Set</span>
+                            </section>
+                            <section class="familyModalSection_cols_2 pt-3">
+                                <p class="noMargin">Location</p>
+                                <div class="availableDiv">
+                                    <p class="noMargin">icon</p>
+                                    <p class="noMargin" id="familyCardModalLocation">New York</p>
                                 </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </section>
+                            <section class="familyModalSection_cols_2 pt-3">
+                                <div>
+                                    <h4>Todays Weather</h4>
+                                    <div>
+                                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
+                                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
+                                                    fill="#F4CE26"></path>
+                                                <path
+                                                    d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
+                                                    fill="#333333"></path>
+                                                <path
+                                                    d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
+                                                    fill="#333333"></path>
+                                                <path
+                                                    d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
+                                                    fill="#FFFFFF"></path>
+                                                <path
+                                                    d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
+                                                    fill="#333333"></path>
+                                            </g>
+                                        </svg>
+                                        <p>50&#x00B0; Rain</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4>Local News Headline</h4>
+                                    <div>
+                                        <p>headline one</p>
+                                        <p>headline two</p>
+                                        <p>headline three</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="familyModalSection_cols_1 pt-3">
+                                <h4>Today's Schedule</h4>
+                                <div class="scheduleDiv pt-3">
+                                    <p>Monday</p>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th>Work: </th>
+                                                <td>9:00am - 5:30pm</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Yoga: </th>
+                                                <td>6:00pm - 7:00pm</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+                            <section class="familyModalSection_cols_1 pt-3">
+                                <h4>Upcoming Events</h4>
+                                <div class="event">
+                                    <div class="availableDiv">
+                                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
+                                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3">
+                                                </path>
+                                                <path
+                                                    d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
+                                                    fill="#300604"></path>
+                                                <path
+                                                    d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
+                                                    fill="#300604"></path>
+                                                <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604">
+                                                </path>
+                                                <path
+                                                    d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
+                                                    fill="#300604"></path>
+                                                <path
+                                                    d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
+                                                    fill="#300604"></path>
+                                                <path
+                                                    d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
+                                                    fill="#300604"></path>
+                                                <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                                <path
+                                                    d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                                    fill="#300604"></path>
+                                                <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                                <path
+                                                    d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                                    fill="#300604"></path>
+                                                <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                                <path
+                                                    d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
+                                                    fill="#228E9D"></path>
+                                                <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                                <path
+                                                    d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
+                                                    fill="#228E9D"></path>
+                                                <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
+                                                <path
+                                                    d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
+                                                    fill="#228E9D"></path>
+                                                <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
+                                            </g>
+                                        </svg>
+                                        <p class="noMargin">December 12, 2026</p>
+                                    </div>
+                                    <div class="ps-5">
+                                        <p class="noMargin">Interview at Market and James</p>
+                                        <span class="badge bg-secondary">Reminder Set</span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- FAMILY CARDS -->
-        <section>
-            <!-- Me -->
-            <div class="card card-me">
-                <div class="card-body card-body-me">
-                    <img class="profilePic" src="images/account.jpg" alt="">
-                    <h5 class="card-title">Me</h5>
-                </div>
-                <div class="cardMeContent">
-                    <!-- <div class="editProfile">
+            <!-- FAMILY CARDS -->
+            <section>
+                <!-- Me -->
+                <div class="card card-me">
+                    <div class="card-body card-body-me">
+                        <img class="profilePic" src="images/account.jpg" alt="">
+                        <h5 class="card-title">Me</h5>
+                    </div>
+                    <div class="cardMeContent">
+                        <!-- <div class="editProfile">
                         <p>Edit</p>
                         <div>
                             <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
@@ -215,303 +219,310 @@
                             </svg>
                         </div>
                     </div> -->
-                    <label for="" class="form-label">How am I feeling today?</label>
-                    <input type="text" class="form-control" id="" placeholder="I feel happy!" required>
+                        <label for="" class="form-label">How am I feeling today?</label>
+                        <input type="text" class="form-control" id="" placeholder="I feel happy!" required>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <!-- Everyone else -->
-        <h2>Family Cards</h2>
-        <section class="familyCardContainer">
-            <div class="card familyCard" onclick="getNameOfFamilyMember('Alex')">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Alex</h5>
-                    <p class="card-text">New York City, NY USA</p>
+            </section>
+            <!-- Everyone else -->
+            <h2>Family Cards</h2>
+            <section class="familyCardContainer">
+                <div class="card familyCard" onclick="getNameOfFamilyMember('Alex')">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Alex</h5>
+                        <p class="card-text">New York City, NY USA</p>
+                    </div>
+                    <div class="card-icons">
+                        <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024"
+                                class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
+                                        fill="#F4CE26"></path>
+                                    <path
+                                        d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
+                                        fill="#333333"></path>
+                                    <path
+                                        d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
+                                        fill="#333333"></path>
+                                    <path
+                                        d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
+                                        fill="#FFFFFF"></path>
+                                    <path
+                                        d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
+                                        fill="#333333"></path>
+                                </g>
+                            </svg></a>
+                        <a href="calendarPerson.html" class="card-link"><svg width="45px" height="45px"
+                                viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path>
+                                    <path
+                                        d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
+                                        fill="#300604"></path>
+                                    <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path>
+                                    <path
+                                        d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
+                                        fill="#300604"></path>
+                                    <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                    <path
+                                        d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                        fill="#300604"></path>
+                                    <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                    <path
+                                        d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                        fill="#300604"></path>
+                                    <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                    <path
+                                        d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
+                                        fill="#228E9D"></path>
+                                    <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                    <path
+                                        d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
+                                        fill="#228E9D"></path>
+                                    <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
+                                    <path
+                                        d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
+                                        fill="#228E9D"></path>
+                                    <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
+                                </g>
+                            </svg></a>
+                    </div>
                 </div>
-                <div class="card-icons">
-                    <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
-                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
-                                    fill="#F4CE26"></path>
-                                <path
-                                    d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
-                                    fill="#333333"></path>
-                                <path
-                                    d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
-                                    fill="#333333"></path>
-                                <path
-                                    d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
-                                    fill="#FFFFFF"></path>
-                                <path
-                                    d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
-                                    fill="#333333"></path>
-                            </g>
-                        </svg></a>
-                    <a href="calendarPerson.html" class="card-link"><svg width="45px" height="45px"
-                            viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                            fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path>
-                                <path
-                                    d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
-                                    fill="#300604"></path>
-                                <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path>
-                                <path
-                                    d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
-                                    fill="#300604"></path>
-                                <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                <path
-                                    d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                    fill="#300604"></path>
-                                <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                <path
-                                    d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                    fill="#300604"></path>
-                                <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                <path
-                                    d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
-                                    fill="#228E9D"></path>
-                                <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                <path d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
-                                    fill="#228E9D"></path>
-                                <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
-                                <path d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
-                                    fill="#228E9D"></path>
-                                <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
-                            </g>
-                        </svg></a>
+                <div class="card familyCard" onclick="getNameOfFamilyMember('Bob')">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Bob</h5>
+                        <p class="card-text">New York City, NY USA</p>
+                    </div>
+                    <div class="card-icons">
+                        <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024"
+                                class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
+                                        fill="#F4CE26"></path>
+                                    <path
+                                        d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
+                                        fill="#333333"></path>
+                                    <path
+                                        d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
+                                        fill="#333333"></path>
+                                    <path
+                                        d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
+                                        fill="#FFFFFF"></path>
+                                    <path
+                                        d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
+                                        fill="#333333"></path>
+                                </g>
+                            </svg></a>
+                        <a href="calendarPerson.html" class="card-link">
+                            <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path>
+                                    <path
+                                        d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
+                                        fill="#300604"></path>
+                                    <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path>
+                                    <path
+                                        d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
+                                        fill="#300604"></path>
+                                    <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                    <path
+                                        d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                        fill="#300604"></path>
+                                    <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                    <path
+                                        d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                        fill="#300604"></path>
+                                    <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                    <path
+                                        d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
+                                        fill="#228E9D"></path>
+                                    <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                    <path
+                                        d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
+                                        fill="#228E9D"></path>
+                                    <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
+                                    <path
+                                        d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
+                                        fill="#228E9D"></path>
+                                    <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
+                                </g>
+                            </svg></a>
+                    </div>
                 </div>
-            </div>
-            <div class="card familyCard" onclick="getNameOfFamilyMember('Bob')">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Bob</h5>
-                    <p class="card-text">New York City, NY USA</p>
+            </section>
+            <section class="familyCardContainer">
+                <div class="card familyCard" onclick="getNameOfFamilyMember('Andrew')">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Andrew</h5>
+                        <p class="card-text">New York City, NY USA</p>
+                    </div>
+                    <div class="card-icons">
+                        <!-- svgs came from https://www.svgrepo.com/svg/530233/weather -->
+                        <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024"
+                                class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
+                                        fill="#F4CE26"></path>
+                                    <path
+                                        d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
+                                        fill="#333333"></path>
+                                    <path
+                                        d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
+                                        fill="#333333"></path>
+                                    <path
+                                        d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
+                                        fill="#FFFFFF"></path>
+                                    <path
+                                        d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
+                                        fill="#333333"></path>
+                                </g>
+                            </svg></a>
+                        <a href="calendarPerson.html" class="card-link">
+                            <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path>
+                                    <path
+                                        d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
+                                        fill="#300604"></path>
+                                    <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path>
+                                    <path
+                                        d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
+                                        fill="#300604"></path>
+                                    <path
+                                        d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
+                                        fill="#300604"></path>
+                                    <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                    <path
+                                        d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                        fill="#300604"></path>
+                                    <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
+                                    <path
+                                        d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
+                                        fill="#300604"></path>
+                                    <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                    <path
+                                        d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
+                                        fill="#228E9D"></path>
+                                    <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
+                                    <path
+                                        d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
+                                        fill="#228E9D"></path>
+                                    <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
+                                    <path
+                                        d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
+                                        fill="#228E9D"></path>
+                                    <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
+                                </g>
+                            </svg></a>
+                    </div>
                 </div>
-                <div class="card-icons">
-                    <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
-                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
-                                    fill="#F4CE26"></path>
-                                <path
-                                    d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
-                                    fill="#333333"></path>
-                                <path
-                                    d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
-                                    fill="#333333"></path>
-                                <path
-                                    d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
-                                    fill="#FFFFFF"></path>
-                                <path
-                                    d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
-                                    fill="#333333"></path>
-                            </g>
-                        </svg></a>
-                    <a href="calendarPerson.html" class="card-link">
-                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path>
-                                <path
-                                    d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
-                                    fill="#300604"></path>
-                                <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path>
-                                <path
-                                    d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
-                                    fill="#300604"></path>
-                                <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                <path
-                                    d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                    fill="#300604"></path>
-                                <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                <path
-                                    d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                    fill="#300604"></path>
-                                <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                <path
-                                    d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
-                                    fill="#228E9D"></path>
-                                <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                <path d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
-                                    fill="#228E9D"></path>
-                                <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
-                                <path d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
-                                    fill="#228E9D"></path>
-                                <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
-                            </g>
-                        </svg></a>
+                <div class="addNewCard">
+                    <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#1C274C" stroke-width="1.5"
+                                stroke-linecap="round"></path>
+                            <path
+                                d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8"
+                                stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                        </g>
+                    </svg>
                 </div>
-            </div>
-        </section>
-        <section class="familyCardContainer">
-            <div class="card familyCard" onclick="getNameOfFamilyMember('Andrew')">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Andrew</h5>
-                    <p class="card-text">New York City, NY USA</p>
-                </div>
-                <div class="card-icons">
-                    <!-- svgs came from https://www.svgrepo.com/svg/530233/weather -->
-                    <a href="#" class="card-link"><svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
-                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
-                                    fill="#F4CE26"></path>
-                                <path
-                                    d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
-                                    fill="#333333"></path>
-                                <path
-                                    d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
-                                    fill="#333333"></path>
-                                <path
-                                    d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
-                                    fill="#FFFFFF"></path>
-                                <path
-                                    d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
-                                    fill="#333333"></path>
-                            </g>
-                        </svg></a>
-                    <a href="calendarPerson.html" class="card-link">
-                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path>
-                                <path
-                                    d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
-                                    fill="#300604"></path>
-                                <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path>
-                                <path
-                                    d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
-                                    fill="#300604"></path>
-                                <path
-                                    d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
-                                    fill="#300604"></path>
-                                <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                <path
-                                    d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                    fill="#300604"></path>
-                                <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                <path
-                                    d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                    fill="#300604"></path>
-                                <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                <path
-                                    d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
-                                    fill="#228E9D"></path>
-                                <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                <path d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
-                                    fill="#228E9D"></path>
-                                <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
-                                <path d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
-                                    fill="#228E9D"></path>
-                                <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
-                            </g>
-                        </svg></a>
-                </div>
-            </div>
-            <div class="addNewCard">
-                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#1C274C" stroke-width="1.5"
-                            stroke-linecap="round"></path>
-                        <path
-                            d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8"
-                            stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
-                    </g>
-                </svg>
-            </div>
-        </section>
+            </section>
 
-        <!-- TO-DO List -->
-        <!-- <section class="homepage_ToDo">
+            <!-- TO-DO List -->
+            <!-- <section class="homepage_ToDo">
             <h4>Upcoming things to do: </h4>
             <div>
                 
             </div>
         </section> -->
-    </main>
+        </main>
 
-    <!-- NAVIGATION -->
-    <nav class="fixed-bottom">
-        <ul>
-            <a href="map.html">
-                <li>
-                    <img src="" alt=""></img>
-                    <p>Map</p>
-                </li>
-            </a>
-            <a href="calendar.html">
-                <li>
-                    <img src="" alt="">
-                    <p>Calendar</p>
-                </li>
-            </a>
-            <a href="Index.html">
-                <li>
-                    <img src="" alt=""></img>
-                    <p>Family</p>
-                </li>
-            </a>
-            <a href="todo.html">
-                <li>
-                    <img src="" alt=""></img>
-                    <p>To-Do List</p>
-                </li>
-            </a>
-            <a href="notification.html">
-                <li>
-                    <img src="" alt=""></img>
-                    <p>Notifications</p>
-                </li>
-            </a>
-        </ul>
-    </nav>
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
+        <!-- NAVIGATION -->
+        <nav class="fixed-bottom">
+            <ul>
+                <a href="map.html">
+                    <li>
+                        <img src="" alt=""></img>
+                        <p>Map</p>
+                    </li>
+                </a>
+                <a href="calendar.html">
+                    <li>
+                        <img src="" alt="">
+                        <p>Calendar</p>
+                    </li>
+                </a>
+                <a href="Index.html">
+                    <li>
+                        <img src="" alt=""></img>
+                        <p>Family</p>
+                    </li>
+                </a>
+                <a href="todo.html">
+                    <li>
+                        <img src="" alt=""></img>
+                        <p>To-Do List</p>
+                    </li>
+                </a>
+                <a href="notification.html">
+                    <li>
+                        <img src="" alt=""></img>
+                        <p>Notifications</p>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+    </body>
+</div>
 
 </html>
 
