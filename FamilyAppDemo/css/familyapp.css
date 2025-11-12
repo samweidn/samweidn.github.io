@@ -136,18 +136,22 @@ nav ul {
 @media screen and (width >=768px) {
     .phonescreen {
         max-width: 400px;
-        margin: 0 auto;
+        margin: 1rem auto;
         overflow: hidden;
         border: black solid 3px;
+        border-radius: 1rem;
+        position: relative;
     }
 
     .fixed-bottom {
+        position: absolute;
         right: auto;
         left: auto;
         width: 394.44px;
     }
 
     .fixed-top {
+        position: absolute;
         right: auto;
         left: auto;
         width: 394.44px;
@@ -186,6 +190,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 30%;
 }
 
 .cardMeContent {
