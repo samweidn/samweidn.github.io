@@ -1,10 +1,15 @@
 :root {}
 
+
+/* GENERAL CLASSES */
+.noMargin {
+    margin: 0;
+}
+
 /***************************************************************************************
  Typography 
  ***************************************************************************************/
 
-/* General Typography */
 /* General Typography */
 
 /* color rgba(195, 82, 20) */
@@ -38,7 +43,7 @@ h2 {
 }
 
 h4 {
-    font-size: 40px;
+    font-size: 20px;
     margin-bottom: 5px;
 }
 
@@ -69,7 +74,21 @@ p {
     font-weight: normal;
 }
 
+/* Shapes */
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
 
+.unavailable {
+    background-color: red;
+}
+
+.available {
+    background-color: green;
+}
 
 /**************************************************************************************
  Section Styles 
@@ -174,6 +193,38 @@ nav ul {
     padding: 10px;
 }
 
+/* MODAL STYLES */
+.familyModalSection_cols_1 {
+    border-bottom: gray solid 1px;
+    padding-bottom: .5rem;
+    width: 100%;
+}
+
+.familyModalSection_cols_2 {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: gray solid 1px;
+    padding-bottom: .5rem;
+    width: 100%;
+}
+
+.availableDiv {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.scheduleDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.familyCardModalProfilePicDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
 /* Calendar Page */
 .embedCalendar {
     /* width: 90%; */
@@ -209,5 +260,9 @@ nav ul {
 
 .profilePic {
     width: 35%;
+    border-radius: 10%;
+}
+
+.familyCardModalProfilePic {
     border-radius: 10%;
 }
