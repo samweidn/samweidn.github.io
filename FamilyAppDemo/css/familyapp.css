@@ -139,8 +139,8 @@ nav ul {
         margin: 1rem auto;
         overflow: hidden;
         border: black solid 3px;
-        border-radius: 1rem;
         position: relative;
+        border-radius: 1rem;
     }
 
     .fixed-bottom {
@@ -238,6 +238,10 @@ nav ul {
 .familyCardModalProfilePicDiv {
     display: flex;
     justify-content: space-around;
+}
+
+#map {
+    height: 180px;
 }
 
 /* Calendar Page */
