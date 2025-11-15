@@ -48,7 +48,7 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="familyCardModal_Title">Modal title</h5>
+                            <h5 class="modal-title familyCardModalName" id="familyCardModal_Title"></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -58,20 +58,20 @@
                             <section class="familyModalSection_cols_2">
                                 <div>
                                     <p class="noMargin">
-                                        <span id="familyCardModalName">Sarah</span>
-                                        (<span id="familyCardModalRelation">Sister</span>)
+                                        <span class="familyCardModalName"></span>
+                                        (<span id="familyCardModalRelation"></span>)
                                     </p>
                                 </div>
                                 <div class="availableDiv">
-                                    <span class="dot available"></span>
-                                    <p class="noMargin" id="availability">Available</p>
+                                    <span class="dot" id="availabilityDot"></span>
+                                    <p class="noMargin" id="availability"></p>
                                 </div>
                             </section>
                             <section class="familyModalSection_cols_2 pt-3">
                                 <p class="noMargin">Location</p>
                                 <div class="availableDiv">
                                     <p class="noMargin">icon</p>
-                                    <p class="noMargin" id="familyCardModalLocation">New York</p>
+                                    <p class="noMargin" id="familyCardModalLocation"></p>
                                 </div>
                             </section>
                             <section class="familyModalSection_cols_1">
@@ -105,15 +105,15 @@
                                                     fill="#333333"></path>
                                             </g>
                                         </svg>
-                                        <p>50&#x00B0; Rain</p>
+                                        <p id="familyModalWeather"></p>
                                     </div>
                                 </div>
                                 <div>
-                                    <h4>Local News Headline</h4>
+                                    <h4>Local News Headlines</h4>
                                     <div>
-                                        <p>headline one</p>
-                                        <p>headline two</p>
-                                        <p>headline three</p>
+                                        <p class="headline"></p>
+                                        <p class="headline"></p>
+                                        <p class="headline"></p>
                                     </div>
                                 </div>
                             </section>
@@ -486,13 +486,6 @@
                 </div>
             </section>
 
-            <!-- TO-DO List -->
-            <!-- <section class="homepage_ToDo">
-            <h4>Upcoming things to do: </h4>
-            <div>
-                
-            </div>
-        </section> -->
         </main>
 
         <!-- NAVIGATION -->
@@ -542,14 +535,16 @@
 <script>
 
     // Modal Bootstrap 5
-    let familyCards = document.querySelectorAll('.familyCard');
+
     const familyCardModal = new bootstrap.Modal(document.getElementById('familyCardModal'));
 
-    familyCards.forEach(card => {
-        card.addEventListener('click', function () {
-            familyCardModal.show();
-        });
-    });
+    //   let familyCards = document.querySelectorAll('.familyCard');
+    // familyCards.forEach(card => {
+    //     card.addEventListener('click', function () {
+
+    //     });
+    // });
+
 
     //map
     var map = L.map('map').setView([40.7128, -74.0060], 13);
@@ -562,7 +557,74 @@
     // Family Data Scripts
     function getNameOfFamilyMember(name) {
         sessionStorage.setItem("familyMemberName", name);
+        loadUpFamilyCardDetails(name);
         getFamilyMemberEvents(name);
+        familyCardModal.show();
+    }
+
+    function loadUpFamilyCardDetails(name) {
+        let familyCardNameElements = document.querySelectorAll('.familyCardModalName');
+        let familyCardRelationElem = document.querySelector('#familyCardModalRelation');
+        let availabilityDot = document.querySelector('#availabilityDot');
+        let availabilityElem = document.querySelector('#availability');
+        let locationElem = document.querySelector('#familyCardModalLocation');
+        let weatherElem = document.querySelector('#familyModalWeather');
+        let headlineElems = document.querySelectorAll('.headline');
+        let headlines = [];
+
+        familyCardNameElements.forEach(nameElement => {
+            nameElement.innerText = name;
+        });
+
+        let availableDotClassList = Array.from(availabilityDot.classList);
+
+        if (availableDotClassList.length > 1) {
+            let lastClass = availableDotClassList.pop();
+            availabilityDot.classList.remove(lastClass);
+        }
+
+        if (name == 'Alex') {
+            familyCardRelationElem.innerText = 'Sister';
+            availabilityDot.classList.add('available');
+            availabilityElem.innerText = 'Available';
+            locationElem.innerText = 'New York, NY';
+            map.setView([40.7128, -74.0060], 13);
+            marker.setLatLng([40.7128, -74.0060]);
+            weatherElem.innerHTML = '65&#x00B0; Cloudy';
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+
+        } else if (name == 'Bob') {
+            familyCardRelationElem.innerText = 'Uncle';
+            availabilityDot.classList.add('unavailable');
+            availabilityElem.innerText = 'Unavailable';
+            locationElem.innerText = 'Boston, MA';
+            map.setView([42.35, -71.05], 13);
+            marker.setLatLng([42.35, -71.05]);
+            weatherElem.innerHTML = '45&#x00B0; Rain';
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+
+        } else {
+            familyCardRelationElem.innerText = 'Mom';
+            availabilityDot.classList.add('unknown');
+            availabilityElem.innerText = 'Unknown';
+            locationElem.innerText = 'Austin, TX';
+            map.setView([30.27, -97.74], 13);
+            marker.setLatLng([30.27, -97.74]);
+            weatherElem.innerHTML = '80&#x00B0; Sunny';
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+            headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+        }
+
+        headlineIndex = 0;
+        headlineElems.forEach(headlineElem => {
+            headlineElem.innerHTML = headlines[headlineIndex];
+            headlineIndex += 1;
+        })
     }
 
     function getFamilyMemberEvents(name) {
