@@ -122,79 +122,13 @@
                                 <div class="scheduleDiv pt-3">
                                     <p>Monday</p>
                                     <table>
-                                        <tbody>
-                                            <tr>
-                                                <th>Work: </th>
-                                                <td>9:00am - 5:30pm</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Yoga: </th>
-                                                <td>6:00pm - 7:00pm</td>
-                                            </tr>
-                                        </tbody>
+                                        <tbody id="scheduleTable"></tbody>
                                     </table>
                                 </div>
                             </section>
                             <section class="familyModalSection_cols_1 pt-3">
                                 <h4>Upcoming Events</h4>
-                                <div class="event">
-                                    <div class="availableDiv">
-                                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
-                                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                            </g>
-                                            <g id="SVGRepo_iconCarrier">
-                                                <path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3">
-                                                </path>
-                                                <path
-                                                    d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z"
-                                                    fill="#300604"></path>
-                                                <path
-                                                    d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z"
-                                                    fill="#300604"></path>
-                                                <path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604">
-                                                </path>
-                                                <path
-                                                    d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z"
-                                                    fill="#300604"></path>
-                                                <path
-                                                    d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z"
-                                                    fill="#300604"></path>
-                                                <path
-                                                    d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z"
-                                                    fill="#300604"></path>
-                                                <path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                                <path
-                                                    d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                                    fill="#300604"></path>
-                                                <path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path>
-                                                <path
-                                                    d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z"
-                                                    fill="#300604"></path>
-                                                <path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                                <path
-                                                    d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z"
-                                                    fill="#228E9D"></path>
-                                                <path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path>
-                                                <path
-                                                    d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z"
-                                                    fill="#228E9D"></path>
-                                                <path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path>
-                                                <path
-                                                    d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z"
-                                                    fill="#228E9D"></path>
-                                                <path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path>
-                                            </g>
-                                        </svg>
-                                        <p class="noMargin">December 12, 2026</p>
-                                    </div>
-                                    <div class="ps-5">
-                                        <p class="noMargin">Interview at Market and James</p>
-                                        <span class="badge bg-secondary">Reminder Set</span>
-                                    </div>
-                                </div>
+                                <div id="events"></div>
                             </section>
                         </div>
                         <div class="modal-footer">
@@ -557,8 +491,8 @@
     // Family Data Scripts
     function getNameOfFamilyMember(name) {
         sessionStorage.setItem("familyMemberName", name);
-        loadUpFamilyCardDetails(name);
         getFamilyMemberEvents(name);
+        loadUpFamilyCardDetails(name);
         familyCardModal.show();
     }
 
@@ -571,6 +505,9 @@
         let weatherElem = document.querySelector('#familyModalWeather');
         let headlineElems = document.querySelectorAll('.headline');
         let headlines = [];
+        let scheduleElem = document.querySelector("#scheduleTable");
+        let scheduleItems = [];
+        let eventsElem = document.querySelector('#events');
 
         familyCardNameElements.forEach(nameElement => {
             nameElement.innerText = name;
@@ -595,6 +532,9 @@
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
 
+            scheduleItems.push({ name: 'Work', time: '9:00am - 5:30pm' });
+            scheduleItems.push({ name: 'Yoga', time: '6:00pm - 7:30pm' });
+
         } else if (name == 'Bob') {
             familyCardRelationElem.innerText = 'Uncle';
             availabilityDot.classList.add('unavailable');
@@ -606,6 +546,9 @@
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
+
+            scheduleItems.push({ name: 'Work', time: '5:00am - 3:30pm' });
+            scheduleItems.push({ name: 'Poker Night', time: '5:00pm - 8:30pm' });
 
         } else {
             familyCardRelationElem.innerText = 'Mom';
@@ -624,7 +567,35 @@
         headlineElems.forEach(headlineElem => {
             headlineElem.innerHTML = headlines[headlineIndex];
             headlineIndex += 1;
-        })
+        });
+
+        let html = '';
+        scheduleItems.forEach(scheduleItem => {
+            html += `<tr><th>${scheduleItem.name}: </th><td>${scheduleItem.time}</td></tr>`;
+        });
+
+        scheduleElem.innerHTML = html;
+
+        html = '';
+
+        let familyMemberEvents = JSON.parse(sessionStorage.getItem("jsonFamilyMemberEvents"));
+
+        familyMemberEvents.forEach(event => {
+            html += '<div class="event"><div class="availableDiv">';
+            html += '<svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path><path d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z" fill="#300604"></path><path d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z" fill="#300604"></path><path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path><path d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z" fill="#300604"></path><path d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z" fill="#300604"></path><path d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z" fill="#300604"></path><path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path><path d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z" fill="#300604"></path><path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path><path d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z" fill="#300604"></path><path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path><path d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z" fill="#228E9D"></path><path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path><path d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z" fill="#228E9D"></path><path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path><path d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z" fill="#228E9D"></path><path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path></g></svg>';
+            html += `<p class="noMargin">${event.eventDate}</p></div>`;
+            html += `<div class="ps-5"><p class="noMargin">${event.eventName}</p>`;
+            let reminderBadge = '';
+            if (event.reminderSet == true) {
+                reminderBadge = '<span class="badge bg-success reminderBadge">reminder set</span>';
+            } else {
+                reminderBadge = '<span class="badge bg-primary reminderBadge"><a href="">set reminder -></a></span>';
+            }
+
+            html += `${reminderBadge}</div></div>`;
+        });
+
+        eventsElem.innerHTML = html;
     }
 
     function getFamilyMemberEvents(name) {
@@ -632,44 +603,51 @@
         var familyMemberEvents = [];
         let event1 = {};
         let event2 = {};
+        // TODO: add method for checking if the reminder has been set for an event already
 
         if (name == 'Alex') {
             event1 = {
                 eventName: 'Interview',
                 eventDate: 'Nov 21st, 2025',
-                eventDateValue: '2025-11-21'
+                eventDateValue: '2025-11-21',
+                reminderSet: false
             };
 
             event2 = {
                 eventName: `Thanksgiving @ Aunt Carol's`,
                 eventDate: 'Nov 30th, 2025',
-                eventDateValue: '2025-11-30'
+                eventDateValue: '2025-11-30',
+                reminderSet: false
             };
 
         } else if (name == 'Bob') {
             event1 = {
                 eventName: 'Driver License Test',
                 eventDate: 'Nov 16th, 2025',
-                eventDateValue: '2025-11-16'
+                eventDateValue: '2025-11-16',
+                reminderSet: false
             };
 
             event2 = {
                 eventName: `Thanksgiving @ Aunt Carol's`,
                 eventDate: 'Nov 30th, 2025',
-                eventDateValue: '2025-11-30'
+                eventDateValue: '2025-11-30',
+                reminderSet: false
             };
 
         } else {
             event1 = {
                 eventName: 'Soccer Game',
                 eventDate: 'Nov 10th, 2025',
-                eventDateValue: '2025-11-10'
+                eventDateValue: '2025-11-10',
+                reminderSet: false
             };
 
             event2 = {
                 eventName: `Thanksgiving @ Aunt Carol's`,
                 eventDate: 'Nov 30th, 2025',
-                eventDateValue: '2025-11-30'
+                eventDateValue: '2025-11-30',
+                reminderSet: false
             };
         }
 

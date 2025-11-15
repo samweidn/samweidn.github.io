@@ -74,6 +74,11 @@ p {
     font-weight: normal;
 }
 
+.reminderBadge a {
+    text-decoration: none;
+    color: white;
+}
+
 /* Shapes */
 .dot {
     height: 25px;
