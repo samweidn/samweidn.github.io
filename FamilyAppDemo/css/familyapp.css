@@ -293,9 +293,10 @@ nav ul {
     height: 180px;
 }
 
-/* Calendar Page */
-.embedCalendar {
-    /* width: 90%; */
+/* Map Page */
+.mapPerson {
+    padding-left: 10px;
+    margin-bottom: 1rem;
 }
 
 /**************************************************************************************
