@@ -67,7 +67,7 @@ ul a li p {
 
 p {
     line-height: 1.5rem;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .thinText {
@@ -79,10 +79,23 @@ p {
     color: white;
 }
 
+.relation {
+    font-style: italic;
+    font-size: 15px;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.card-small-text {
+    font-size: 12px;
+}
+
 /* Shapes */
 .dot {
-    height: 25px;
-    width: 25px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -183,17 +196,35 @@ nav ul {
 
 .card {
     box-shadow: 3px 5px rgba(202, 201, 201, 0.284);
+    flex: 1 0 150px;
+}
+
+
+.card-body {
+    border-bottom: solid gray 1px;
 }
 
 .card-icons {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    padding: 16px;
+    padding: 8px;
+}
+
+.card-icons div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
 }
 
 .card-me {
     flex-flow: row;
+}
+
+.card-me .card-body {
+    border-bottom: none;
 }
 
 .card-body-me {
@@ -236,6 +267,14 @@ nav ul {
 .availableDiv {
     display: flex;
     align-items: center;
+    gap: .5rem;
+}
+
+.availableCardDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     gap: .5rem;
 }
 
