@@ -69,7 +69,7 @@
                     </section>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a class="btn btn-primary" href="reminderNew.html">Create New Reminder</a>
+                    <a class="btn btn-primary" href="reminderNew.html" onclick="getEventData(0)">Create New Reminder</a>
                 </div>
             </div>
         </main>
@@ -114,5 +114,28 @@
 </html>
 
 <script>
+    function getEventData(num) {
+        let notificationDetails = {};
+
+        if (num === 0) {
+            notificationDetails = {
+                notificationEvent: '',
+                notificationDate: ''
+            }
+
+        } else {
+            let familyMemberEvents = JSON.parse(sessionStorage.getItem("jsonFamilyMemberEvents"));
+            let eventIndex = parseInt(num) - 1;
+
+            notificationDetails = {
+                notificationEvent: familyMemberEvents[eventIndex].eventName,
+                notificationDate: familyMemberEvents[eventIndex].eventDateValue
+            }
+        }
+
+        let jsonNotificationDetails = JSON.stringify(notificationDetails);
+        sessionStorage.setItem("jsonNotificationDetails", jsonNotificationDetails);
+
+    }
     // TODO: add function for putting in remidners that were made
 </script>
