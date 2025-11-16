@@ -48,7 +48,7 @@
                                 <span class="thinText" id="eventDate1"></span>
                             </th>
                             <td class="actionButtons">
-                                <a href="notificationNew.html" onclick="getEventData('1')" class="btn btn-light">Create
+                                <a href="reminderNew.html" onclick="getEventData('1')" class="btn btn-light">Create
                                     Notification <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -86,7 +86,7 @@
                                 <span class="thinText" id="eventDate2"></span>
                             </th>
                             <td class="actionButtons">
-                                <a href="notificationNew.html" onclick="getEventData('2')" class="btn btn-light">Create
+                                <a href="reminderNew.html" onclick="getEventData('2')" class="btn btn-light">Create
                                     Notification <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -171,6 +171,7 @@
         document.getElementById('familyMemberName').innerText = name;
     }
     setEventData();
+    // TODO: Redo this function
     function setEventData() {
         let familyMemberEvents = JSON.parse(sessionStorage.getItem("jsonFamilyMemberEvents"));
 
