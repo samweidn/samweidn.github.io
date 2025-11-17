@@ -61,7 +61,7 @@
                                 </g>
                             </svg>Event</label>
                         <select class="form-select" id="calendarEvent" name="linkedEventName">
-                            <option value="" selected>Choose...</option>
+                            <option value="" selected></option>
                             <option id="11" value="11">Interview at Market and James</option>
                             <option id="12" value="12">Thanksgiving @ Aunt Carol's</option>
                             <option id="13" value="13">Driver License Test</option>
@@ -89,7 +89,7 @@
                     <label for="notificationFrequency" class="col-sm-2 col-form-label">Repeat</label>
                     <select class="form-select" aria-label="frequency select" id="notificationFrequency"
                         name="notificationFrequency">
-                        <option value="" selected>Choose...</option>
+                        <option value="" selected></option>
                         <option value="Daily">Daily</option>
                         <option value="Weekly">Weekly</option>
                         <option value="Monthly">Monthly</option>
@@ -99,7 +99,7 @@
                     <label for="notificationWho" class="col-sm-2 col-form-label">Person</label>
                     <select class="form-select" aria-label="frequency select" id="notificationWho"
                         name="notificationWho">
-                        <option value="" selected>Choose...</option>
+                        <option value="" selected></option>
                         <option value="Sarah">Sarah</option>
                         <option value="Alice">Alice</option>
                         <option value="Mom">Mom</option>
@@ -204,42 +204,47 @@
                     .forEach(function (form) {
                         form.addEventListener('submit', function (event) {
                             event.preventDefault();
-                            if (!form.checkValidity()) {
+                            console.log(form.checkValidity());
+                            if (form.checkValidity()) {
                                 event.stopPropagation()
 
-                            }
+                                const formData = new FormData(form); // Create a FormData object from the form
+                                const formObject = Object.fromEntries(formData.entries());
+                                let allReminders = JSON.parse(sessionStorage.getItem('jsonReminders'));
 
-                            const formData = new FormData(form); // Create a FormData object from the form
-                            const formObject = Object.fromEntries(formData.entries());
-                            let allReminders = JSON.parse(sessionStorage.getItem('jsonReminders'));
-
-                            let reminder = {
-                                name: formObject.notificationName,
-                                who: formObject.notificationWho,
-                                date: formObject.notificationDate,
-                                time: formObject.notificationTime,
-                                contactmethod: formObject.contactMethod,
-                                frequency: formObject.notificationFrequency,
-                                linkedevent: document.getElementById(formObject.linkedEventName).innerText,
-                                linkedeventId: formObject.linkedEventName,
-                                notes: formObject.notes
-                            }
-
-                            if (reminder.linkedeventId != null) {
-                                let allFamilyMemberEvents = JSON.parse(sessionStorage.getItem('jsonAllFamilyMemberEvents'));
-                                let eventToUpdate = allFamilyMemberEvents.find(event => event.uniqueId == reminder.linkedeventId);
-                                if (eventToUpdate != null) {
-                                    eventToUpdate.reminderSet = true;
+                                let reminder = {
+                                    name: formObject.notificationName,
+                                    who: formObject.notificationWho,
+                                    date: formObject.notificationDate,
+                                    time: formObject.notificationTime,
+                                    contactmethod: formObject.contactMethod,
+                                    frequency: formObject.notificationFrequency,
+                                    linkedevent: '',
+                                    linkedeventId: formObject.linkedEventName,
+                                    notes: formObject.notes
                                 }
-                                sessionStorage.setItem('jsonAllFamilyMemberEvents', JSON.stringify(allFamilyMemberEvents));
-                            }
 
-                            allReminders.push(reminder);
-                            const jsonAllReminders = JSON.stringify(allReminders);
-                            sessionStorage.setItem("jsonReminders", jsonAllReminders);
-                            console.log(jsonAllReminders);
-                            window.location.href = "reminder.html";
-                            form.classList.add('was-validated')
+                                if (reminder.linkedeventId != null) {
+
+                                    reminder.linkedevent = document.getElementById(formObject.linkedEventName).innerText;
+
+                                    let allFamilyMemberEvents = JSON.parse(sessionStorage.getItem('jsonAllFamilyMemberEvents'));
+                                    let eventToUpdate = allFamilyMemberEvents.find(event => event.uniqueId == reminder.linkedeventId);
+                                    if (eventToUpdate != null) {
+                                        eventToUpdate.reminderSet = true;
+                                    }
+                                    sessionStorage.setItem('jsonAllFamilyMemberEvents', JSON.stringify(allFamilyMemberEvents));
+                                }
+
+                                allReminders.push(reminder);
+                                const jsonAllReminders = JSON.stringify(allReminders);
+                                sessionStorage.setItem("jsonReminders", jsonAllReminders);
+                                console.log(jsonAllReminders);
+                                window.location.href = "reminder.html";
+                            }
+                            form.classList.add('was-validated');
+
+
                         }, false)
                     })
             })()
