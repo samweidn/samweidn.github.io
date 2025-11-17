@@ -204,14 +204,12 @@
                     .forEach(function (form) {
                         form.addEventListener('submit', function (event) {
                             event.preventDefault();
-                            console.log(form.checkValidity());
                             if (form.checkValidity()) {
                                 event.stopPropagation()
 
                                 const formData = new FormData(form); // Create a FormData object from the form
                                 const formObject = Object.fromEntries(formData.entries());
                                 let allReminders = JSON.parse(sessionStorage.getItem('jsonReminders'));
-
                                 let reminder = {
                                     name: formObject.notificationName,
                                     who: formObject.notificationWho,
@@ -239,7 +237,6 @@
                                 allReminders.push(reminder);
                                 const jsonAllReminders = JSON.stringify(allReminders);
                                 sessionStorage.setItem("jsonReminders", jsonAllReminders);
-                                console.log(jsonAllReminders);
                                 window.location.href = "reminder.html";
                             }
                             form.classList.add('was-validated');
@@ -262,7 +259,6 @@
         if (notificationDetails != undefined) {
             document.getElementById("calendarEvent").value = notificationDetails.notificationEventId;
             document.getElementById("notificationDate").value = notificationDetails.notificationDate;
-            document.getElementById("notificationWho").value = notificationDetails.notificationPerson;
         }
     }
 
