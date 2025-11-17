@@ -209,11 +209,22 @@
 
                                 const formData = new FormData(form); // Create a FormData object from the form
                                 const formObject = Object.fromEntries(formData.entries());
+
+                                const dateOptions = {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                };
+                                let dateToBeFormatted = new Date(formObject.notificationDate);
+                                dateToBeFormatted.setDate(dateToBeFormatted.getDate() + 1);
+                                const formattedDate1 = new Intl.DateTimeFormat('en-US', dateOptions).format(dateToBeFormatted);
+
                                 let allReminders = JSON.parse(sessionStorage.getItem('jsonReminders'));
                                 let reminder = {
                                     name: formObject.notificationName,
                                     who: formObject.notificationWho,
-                                    date: formObject.notificationDate,
+                                    dateValue: formObject.notificationDate,
+                                    date: formattedDate1,
                                     time: formObject.notificationTime,
                                     contactmethod: formObject.contactMethod,
                                     frequency: formObject.notificationFrequency,
@@ -259,6 +270,7 @@
         if (notificationDetails != undefined) {
             document.getElementById("calendarEvent").value = notificationDetails.notificationEventId;
             document.getElementById("notificationDate").value = notificationDetails.notificationDate;
+            document.getElementById("notificationWho").value = notificationDetails.notificationPerson;
         }
     }
 
