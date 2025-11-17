@@ -37,11 +37,11 @@
                     </ol>
                 </div>
             </div>
-            <form class="row g-3 needs-validation" action="reminder.html" novalidate>
+            <form class="row g-3 needs-validation" novalidate> <!--action="reminder.html"-->
                 <div class="col-md-12">
                     <label for="notificationName" class="form-label">Reminder Name</label>
-                    <input type="text" class="form-control" id="notificationName" placeholder="Name your reminder"
-                        required>
+                    <input type="text" class="form-control" id="notificationName" name="notificationName"
+                        placeholder="Name your reminder" required>
                     <div class="invalid-feedback">
                         You must enter a reminder name.
                     </div>
@@ -59,12 +59,13 @@
                                         d="M4.040 26.96c-1.040 0-2.080-0.4-2.88-1.2-1.6-1.56-1.6-4.16 0-5.76l11.080-11.040c0.96-0.96 2.56-0.96 3.52 0 0.48 0.48 0.72 1.080 0.72 1.76s-0.24 1.28-0.72 1.76l-8.8 8.72c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.76-8.76c0.16-0.16 0.24-0.36 0.24-0.56s-0.080-0.4-0.24-0.56c-0.32-0.32-0.84-0.32-1.12 0l-11.040 11.080c-0.92 0.92-0.92 2.48 0 3.4s2.48 0.92 3.4 0l11.040-11.080c0.76-0.76 1.16-1.76 1.16-2.84s-0.4-2.080-1.16-2.84c-1.56-1.56-4.080-1.56-5.64 0l-8.76 8.8c-0.32 0.32-0.84 0.32-1.2 0-0.32-0.32-0.32-0.84 0-1.2l8.8-8.76c2.2-2.2 5.8-2.2 8.040 0 1.080 1.080 1.68 2.48 1.68 4s-0.6 2.96-1.68 4l-11.080 11.080c-0.8 0.8-1.8 1.2-2.92 1.2z">
                                     </path>
                                 </g>
-                            </svg>Associated Event</label>
-                        <select class="form-select" id="calendarEvent">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            </svg>Event</label>
+                        <select class="form-select" id="calendarEvent" name="linkedEventName">
+                            <option value="" selected>Choose...</option>
+                            <option id="11" value="11">Interview at Market and James</option>
+                            <option id="12" value="12">Thanksgiving @ Aunt Carol's</option>
+                            <option id="13" value="13">Driver License Test</option>
+                            <option id="14" value="14">Soccer Game</option>
                         </select>
                     </div>
                 </div>
@@ -85,12 +86,24 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Repeat</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Choose...</option>
-                        <option value="1">Daily</option>
-                        <option value="2">Weekly</option>
-                        <option value="3">Monthly</option>
+                    <label for="notificationFrequency" class="col-sm-2 col-form-label">Repeat</label>
+                    <select class="form-select" aria-label="frequency select" id="notificationFrequency"
+                        name="notificationFrequency">
+                        <option value="" selected>Choose...</option>
+                        <option value="Daily">Daily</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="notificationWho" class="col-sm-2 col-form-label">Person</label>
+                    <select class="form-select" aria-label="frequency select" id="notificationWho"
+                        name="notificationWho">
+                        <option value="" selected>Choose...</option>
+                        <option value="Sarah">Sarah</option>
+                        <option value="Alice">Alice</option>
+                        <option value="Mom">Mom</option>
+                        <option value="Dad">Dad</option>
                     </select>
                 </div>
                 <div class="col-md-12">
@@ -98,32 +111,32 @@
                     <div class="d-flex justify-content-around">
                         <div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
+                                <input class="form-check-input" type="radio" name="contactMethod"
+                                    id="contactMethod_Phone" value="Phone">
+                                <label class="form-check-label" for="contactMethod_Phone">
                                     Phone
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
+                                <input class="form-check-input" type="radio" name="contactMethod"
+                                    id="contactMethod_Email" value="Email">
+                                <label class="form-check-label" for="contactMethod_Email">
                                     Email
                                 </label>
                             </div>
                         </div>
                         <div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
+                                <input class="form-check-input" type="radio" name="contactMethod"
+                                    id="contactMethod_Text" value="Text">
+                                <label class="form-check-label" for="contactMethod_Text">
                                     Text
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
+                                <input class="form-check-input" type="radio" name="contactMethod"
+                                    id="contactMethod_Facetime" value="Facetime" checked>
+                                <label class="form-check-label" for="contactMethod_Facetime">
                                     Facetime
                                 </label>
                             </div>
@@ -132,9 +145,9 @@
                 </div>
                 <div class="col-md-12">
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here"
-                            id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Notes</label>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="notes"
+                            name="notes"></textarea>
+                        <label for="notes">Notes</label>
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-around mt-5">
@@ -190,27 +203,63 @@
                 Array.prototype.slice.call(forms)
                     .forEach(function (form) {
                         form.addEventListener('submit', function (event) {
+                            event.preventDefault();
                             if (!form.checkValidity()) {
-                                event.preventDefault()
                                 event.stopPropagation()
+
                             }
 
+                            const formData = new FormData(form); // Create a FormData object from the form
+                            const formObject = Object.fromEntries(formData.entries());
+                            let allReminders = JSON.parse(sessionStorage.getItem('jsonReminders'));
+
+                            let reminder = {
+                                name: formObject.notificationName,
+                                who: formObject.notificationWho,
+                                date: formObject.notificationDate,
+                                time: formObject.notificationTime,
+                                contactmethod: formObject.contactMethod,
+                                frequency: formObject.notificationFrequency,
+                                linkedevent: document.getElementById(formObject.linkedEventName).innerText,
+                                linkedeventId: formObject.linkedEventName,
+                                notes: formObject.notes
+                            }
+
+                            if (reminder.linkedeventId != null) {
+                                let allFamilyMemberEvents = JSON.parse(sessionStorage.getItem('jsonAllFamilyMemberEvents'));
+                                let eventToUpdate = allFamilyMemberEvents.find(event => event.uniqueId == reminder.linkedeventId);
+                                if (eventToUpdate != null) {
+                                    eventToUpdate.reminderSet = true;
+                                }
+                                sessionStorage.setItem('jsonAllFamilyMemberEvents', JSON.stringify(allFamilyMemberEvents));
+                            }
+
+                            allReminders.push(reminder);
+                            const jsonAllReminders = JSON.stringify(allReminders);
+                            sessionStorage.setItem("jsonReminders", jsonAllReminders);
+                            console.log(jsonAllReminders);
+                            window.location.href = "reminder.html";
                             form.classList.add('was-validated')
                         }, false)
                     })
             })()
         </script>
-        <script>
-            setNotificationDetails();
-            function setNotificationDetails() {
-                let notificationDetails = JSON.parse(sessionStorage.getItem("jsonNotificationDetails"));
-                if (notificationDetails != undefined) {
-                    document.getElementById("notificationName").value = notificationDetails.notificationEvent;
-                    document.getElementById("notificationDate").value = notificationDetails.notificationDate;
-                }
-            }
-        </script>
+
     </body>
 </div>
 
 </html>
+
+<script>
+    setNotificationDetails();
+    function setNotificationDetails() {
+        let notificationDetails = JSON.parse(sessionStorage.getItem("jsonNotificationDetails"));
+        if (notificationDetails != undefined) {
+            document.getElementById("calendarEvent").value = notificationDetails.notificationEventId;
+            document.getElementById("notificationDate").value = notificationDetails.notificationDate;
+            document.getElementById("notificationWho").value = notificationDetails.notificationPerson;
+        }
+    }
+
+
+</script>

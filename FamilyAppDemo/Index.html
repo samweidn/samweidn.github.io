@@ -524,16 +524,7 @@
 <script>
 
     // Modal Bootstrap 5
-
     const familyCardModal = new bootstrap.Modal(document.getElementById('familyCardModal'));
-
-    //   let familyCards = document.querySelectorAll('.familyCard');
-    // familyCards.forEach(card => {
-    //     card.addEventListener('click', function () {
-
-    //     });
-    // });
-
 
     //map
     var map = L.map('map').setView([40.7128, -74.0060], 13);
@@ -591,7 +582,7 @@
             scheduleItems.push({ name: 'Yoga', time: '6:00pm - 7:30pm' });
 
         } else if (name == 'Alice') {
-            familyCardRelationElem.innerText = 'Uncle';
+            familyCardRelationElem.innerText = 'Aunt';
             availabilityDot.classList.add('unavailable');
             availabilityElem.innerText = 'Unavailable';
             locationElem.innerText = 'Boston, MA';
@@ -634,6 +625,9 @@
         html = '';
 
         let familyMemberEvents = JSON.parse(sessionStorage.getItem("jsonFamilyMemberEvents"));
+        familyMemberEvents.sort((a, b) => {
+            return a.orderId - b.orderId;
+        });
 
         familyMemberEvents.forEach(event => {
             html += '<div class="event"><div class="availableDiv">';
@@ -646,7 +640,7 @@
             if (event.reminderSet == true) {
                 reminderBadge = '<span class="badge bg-success reminderBadge">reminder set</span>';
             } else {
-                reminderBadge = `<span class="btn btn-primary btn-sm reminderBadge"><a href="reminderNew.html" onclick="getEventData(${event.id})">set reminder <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a></span>`;
+                reminderBadge = `<span class="btn btn-primary btn-sm reminderBadge"><a href="reminderNew.html" onclick="getEventData(${event.uniqueId})">set reminder <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a></span>`;
             }
 
             html += `${reminderBadge}</div></div>`;
@@ -657,81 +651,95 @@
 
     function getFamilyMemberEvents(name) {
 
-        var familyMemberEvents = [];
-        let event1 = {};
-        let event2 = {};
-        // TODO: add method for checking if the reminder has been set for an event already
+        let allFamilyMemberEvents = JSON.parse(sessionStorage.getItem('jsonAllFamilyMemberEvents'));
+
+        // TODO: rewrite this to access the created entities
+        let familyMemberEvents = [];
 
         if (name == 'Sarah') {
-            event1 = {
-                eventName: 'Interview',
-                eventDate: 'Nov 21st, 2025',
-                eventDateValue: '2025-11-21',
-                reminderSet: false,
-                id: 1
-            };
-
-            event2 = {
-                eventName: `Thanksgiving @ Aunt Carol's`,
-                eventDate: 'Nov 30th, 2025',
-                eventDateValue: '2025-11-30',
-                reminderSet: false,
-                id: 2
-            };
+            familyMemberEvents = allFamilyMemberEvents.filter(event => event.familyMember.includes('Sarah'));
 
         } else if (name == 'Alice') {
-            event1 = {
-                eventName: 'Driver License Test',
-                eventDate: 'Nov 16th, 2025',
-                eventDateValue: '2025-11-16',
-                reminderSet: false,
-                id: 1
-            };
-
-            event2 = {
-                eventName: `Thanksgiving @ Aunt Carol's`,
-                eventDate: 'Nov 30th, 2025',
-                eventDateValue: '2025-11-30',
-                reminderSet: false,
-                id: 2
-            };
+            familyMemberEvents = allFamilyMemberEvents.filter(event => event.familyMember.includes('Alice'));
 
         } else {
-            event1 = {
-                eventName: 'Soccer Game',
-                eventDate: 'Nov 10th, 2025',
-                eventDateValue: '2025-11-10',
-                reminderSet: false,
-                id: 1
-            };
-
-            event2 = {
-                eventName: `Thanksgiving @ Aunt Carol's`,
-                eventDate: 'Nov 30th, 2025',
-                eventDateValue: '2025-11-30',
-                reminderSet: false,
-                id: 2
-            };
+            familyMemberEvents = allFamilyMemberEvents.filter(event => event.familyMember.includes('Mom'));
         }
-
-        familyMemberEvents.push(event1);
-        familyMemberEvents.push(event2);
 
         const jsonFamilyMemberEvents = JSON.stringify(familyMemberEvents);
         sessionStorage.setItem("jsonFamilyMemberEvents", jsonFamilyMemberEvents);
     }
 
-    function getEventData(num) {
+    function getEventData(eventId) {
         let familyMemberEvents = JSON.parse(sessionStorage.getItem("jsonFamilyMemberEvents"));
-        let eventIndex = parseInt(num) - 1;
+        let familyMemberEvent = familyMemberEvents.filter(event => event.uniqueId == eventId);
 
         const notificationDetails = {
-            notificationEvent: familyMemberEvents[eventIndex].eventName,
-            notificationDate: familyMemberEvents[eventIndex].eventDateValue
+            notificationEvent: familyMemberEvent[0].eventName,
+            notificationDate: familyMemberEvent[0].eventDateValue,
+            notificationPerson: familyMemberEvent[0].familyMember,
+            notificationEventId: familyMemberEvent[0].uniqueId
         }
 
         let jsonNotificationDetails = JSON.stringify(notificationDetails);
         sessionStorage.setItem("jsonNotificationDetails", jsonNotificationDetails);
     }
 
+    createAllFamilyMemberEvents();
+    function createAllFamilyMemberEvents() {
+
+        if (sessionStorage.getItem("jsonAllFamilyMemberEvents") === null) {
+            var allFamilyMemberEvents = [];
+
+            event1 = {
+                familyMember: ['Sarah'],
+                eventName: 'Interview at Market and James',
+                eventDate: 'Nov 21st, 2025',
+                eventDateValue: '2025-11-21',
+                reminderSet: false,
+                orderId: 1,
+                uniqueId: 11
+            };
+
+            event2 = {
+                familyMember: ['Mom', 'Dad', 'Sarah', 'Alice'],
+                eventName: `Thanksgiving @ Aunt Carol's`,
+                eventDate: 'Nov 30th, 2025',
+                eventDateValue: '2025-11-30',
+                reminderSet: false,
+                orderId: 2,
+                uniqueId: 12
+            };
+
+            event3 = {
+                familyMember: ['Alice'],
+                eventName: 'Driver License Test',
+                eventDate: 'Nov 16th, 2025',
+                eventDateValue: '2025-11-16',
+                reminderSet: false,
+                orderId: 1,
+                uniqueId: 13
+            };
+
+            event4 = {
+                familyMember: ['Mom', 'Dad'],
+                eventName: 'Soccer Game',
+                eventDate: 'Nov 10th, 2025',
+                eventDateValue: '2025-11-10',
+                reminderSet: false,
+                orderId: 1,
+                uniqueId: 14
+            }
+
+            allFamilyMemberEvents.push(event1);
+            allFamilyMemberEvents.push(event2);
+            allFamilyMemberEvents.push(event3);
+            allFamilyMemberEvents.push(event4);
+
+            const jsonAllFamilyMemberEvents = JSON.stringify(allFamilyMemberEvents);
+            sessionStorage.setItem("jsonAllFamilyMemberEvents", jsonAllFamilyMemberEvents);
+            sessionStorage.setItem("jsonReminders", JSON.stringify([]));
+        }
+
+    }
 </script>

@@ -28,7 +28,7 @@
         <!-- MAIN CONTENT -->
         <main class="container">
             <h2>Reminders</h2>
-            <div>
+            <div id="renindersContainer">
                 <div class="ps-2 mb-3 border-start border-primary border-4">
                     <section class="d-flex justify-content-between">
                         <h5 class="noMargin">Call Your Sister</h5>
@@ -114,10 +114,10 @@
 </html>
 
 <script>
-    function getEventData(num) {
+    function getEventData(eventId) {
         let notificationDetails = {};
 
-        if (num === 0) {
+        if (eventId === 0) {
             notificationDetails = {
                 notificationEvent: '',
                 notificationDate: ''
@@ -125,11 +125,12 @@
 
         } else {
             let familyMemberEvents = JSON.parse(sessionStorage.getItem("jsonFamilyMemberEvents"));
-            let eventIndex = parseInt(num) - 1;
+            let familyMemberEvent = familyMemberEvents.filter(event => event.uniqueId == eventId);
 
-            notificationDetails = {
-                notificationEvent: familyMemberEvents[eventIndex].eventName,
-                notificationDate: familyMemberEvents[eventIndex].eventDateValue
+            const notificationDetails = {
+                notificationEvent: familyMemberEvent[0].eventName,
+                notificationDate: familyMemberEvent[0].eventDateValue,
+                notificationEventId: familyMemberEvent[0].uniqueId
             }
         }
 
@@ -137,5 +138,40 @@
         sessionStorage.setItem("jsonNotificationDetails", jsonNotificationDetails);
 
     }
+
     // TODO: add function for putting in remidners that were made
+    addReminders();
+    function addReminders() {
+
+        const allReminders = JSON.parse(sessionStorage.getItem('jsonReminders'));
+
+        // TODO: order by the date ascending
+        // allReminders.sort((a, b) => a.date.getTime() - b.date.getTime());
+
+        allReminders.forEach(reminder => {
+            var html = `<div class="ps-2 mb-3 border-start border-success border-4">`;
+            html += ` <section class="d-flex justify-content-between">`;
+            html += `<h5 class="noMargin">${reminder.name}</h5>`;
+            html += `<div class="d-flex">`;
+            html += `<p class="me-2 noMargin">&#9998;</p>`;
+            html += `<p class="noMargin">&#128465;</p>`;
+            html += `</div></section>`;
+            html += `<section class="d-flex justify-content-between ms-2 me-2">`;
+            html += `<p class="noMargin">${reminder.who}</p>`;
+            html += `<p class="noMargin">${reminder.date}</p>`;
+            html += `</section>`;
+            html += `<section class="d-flex justify-content-between ms-2 me-2">`;
+            html += `<p class="noMargin">${reminder.contactmethod}</p>`;
+            html += `<p class="noMargin">${reminder.frequency}</p>`;
+            html += `</section>`;
+            html += `<section class="d-flex justify-content-between ms-2 me-2">`;
+            html += ` <p class="noMargin">${reminder.linkedevent}</p>`;
+            html += ` </section></div>`;
+
+            var reminderContainer = document.querySelector('#renindersContainer');
+            reminderContainer.insertAdjacentHTML('afterbegin', html);
+
+        });
+
+    }
 </script>
