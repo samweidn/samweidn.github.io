@@ -231,6 +231,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 30%;
 }
 
@@ -275,6 +276,13 @@ nav ul {
     align-items: center;
     justify-content: center;
     width: 100%;
+    gap: .5rem;
+}
+
+.availableCardDivMe {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: .5rem;
 }
 
@@ -334,7 +342,7 @@ nav ul {
 /* Family Page */
 
 .profilePic {
-    width: 50%;
+    width: 70%;
     border-radius: 95%;
 }
 
