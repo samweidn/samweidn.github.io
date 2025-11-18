@@ -38,7 +38,7 @@ h1 {
 }
 
 h2 {
-    font-size: 45px;
+    font-size: 25px;
     margin: 0;
 }
 
@@ -68,6 +68,12 @@ ul a li p {
 p {
     line-height: 1.5rem;
     font-size: 15px;
+}
+
+.logo p {
+    margin-bottom: 0;
+    font-size: 26px;
+    color: white;
 }
 
 .thinText {
@@ -128,16 +134,23 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    background-color: rgb(238, 237, 237);
+    background-color: rgb(30, 155, 239);
 }
 
 .logo {
     display: flex;
+    align-items: flex-end;
+}
+
+.addNew {
+    display: flex;
+    flex-flow: column;
     align-items: center;
 }
 
 .accountDiv {
     text-align: right;
+    width: 120px;
 }
 
 .accountDiv p {
@@ -145,7 +158,7 @@ header {
 }
 
 nav {
-    background-color: rgb(238, 237, 237);
+    border-top: black solid 1px;
 }
 
 nav ul {
@@ -335,14 +348,14 @@ nav ul {
     border-radius: 50%;
 }
 
-.logo img {
+/* .logo img {
     width: 25%;
-}
+} */
 
 /* Family Page */
 
 .profilePic {
-    width: 70%;
+    width: 50%;
     border-radius: 95%;
 }
 

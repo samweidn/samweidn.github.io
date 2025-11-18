@@ -29,7 +29,7 @@
         <!-- HEADER -->
         <header class="fixed-top">
             <div class="logo">
-                <p>LOGO</p>
+                <p>Family Connnection</p>
             </div>
             <div class="accountDiv">
                 <div>
@@ -154,15 +154,19 @@
             </div>
 
             <!-- FAMILY CARDS -->
-            <section>
+            <section class="border-bottom pb-3">
                 <!-- Me -->
-                <div class="card card-me">
-                    <div class="card-body card-body-me">
-                        <img class="profilePic" src="images/account.jpg" alt="">
-                        <h5 class="card-title">Me</h5>
+                <div>
+                    <div class="availableCardDivMe">
+                        <span class="dot unknown"></span>
+                        <p class="noMargin">Available</p>
                     </div>
-                    <div class="cardMeContent">
-                        <!-- <div class="editProfile">
+                </div>
+
+                <label for="" class="form-label">How am I feeling today?</label>
+                <input type="text" class="form-control" id="" placeholder="&#9998; Tell me how you feel" required>
+
+                <!-- <div class="editProfile">
                         <p>Edit</p>
                         <div>
                             <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
@@ -179,21 +183,53 @@
                             </svg>
                         </div>
                     </div> -->
-                        <div>
-                            <div class="availableCardDivMe">
-                                <span class="dot unknown"></span>
-                                <p class="noMargin">Available</p>
-                            </div>
-                        </div>
-
-                        <label for="" class="form-label">How am I feeling today?</label>
-                        <input type="text" class="form-control" id="" placeholder="&#9998; Tell me how you feel"
-                            required>
-                    </div>
-                </div>
             </section>
             <!-- Everyone else -->
-            <h2>Family Cards</h2>
+            <div class="d-flex gap-3">
+                <div class="d-flex gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" id="Layer_2" data-name="Layer 2"
+                        viewBox="0 0 50.22 50.22">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #398ecd;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <polygon class="cls-1"
+                                points="25.11 0 0 17.27 0 50.22 20.74 50.22 20.74 33.44 29.48 33.44 29.48 50.22 50.22 50.22 50.22 17.27 25.11 0" />
+                        </g>
+                    </svg>
+                    <h2>The Smith Family House</h2>
+                </div>
+                <div class="addNew">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" id="Layer_2" data-name="Layer 2"
+                        viewBox="0 0 58.35 58.35">
+                        <defs>
+                            <style>
+                                .cls-2 {
+                                    fill: none;
+                                    stroke: #333;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 2.54px;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <g>
+                                <circle class="cls-2" cx="29.17" cy="29.17" r="27.9"
+                                    transform="translate(-4.3 53.3) rotate(-80.78)" />
+                                <line class="cls-2" x1="29.17" y1="15.98" x2="29.17" y2="42.37" />
+                                <line class="cls-2" x1="42.37" y1="29.17" x2="15.98" y2="29.17" />
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Add New</p>
+                </div>
+            </div>
+
             <section class="familyCardContainer">
                 <div class="card familyCard" onclick="getNameOfFamilyMember('Sarah')">
                     <img src="..." class="card-img-top" alt="...">
