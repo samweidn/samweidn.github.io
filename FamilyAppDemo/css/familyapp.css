@@ -1,6 +1,7 @@
 :root {
-    --lightgray: rgb(252, 249, 249);
+    --lightgray: rgb(245, 245, 245);
     --blue: rgb(30, 155, 239);
+    --blue-active: rgb(23, 122, 188);
 }
 
 /***************************************************************************************
@@ -70,7 +71,7 @@ p {
 }
 
 nav ul li p {
-    color: white;
+    color: whitesmoke;
 }
 
 .availableCardDiv p {
@@ -170,7 +171,6 @@ header {
 }
 
 nav {
-    border-top: black solid 1px;
     background-color: var(--blue);
 }
 
@@ -178,6 +178,15 @@ nav ul {
     display: flex;
     justify-content: space-around;
     padding: 0;
+}
+
+.activeNav {
+    /* background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 5px; */
+    font-weight: bold;
+    color: white;
 }
 
 /* Media Query Section Styles */
@@ -265,6 +274,10 @@ nav ul {
 
 .cardMeContent {
     padding: 1rem;
+}
+
+.status-unfocused {
+    background-color: var(--lightgray);
 }
 
 .editProfile {
