@@ -57,21 +57,21 @@
                             </section>
                             <section class="familyModalSection_cols_2">
                                 <div>
-                                    <p class="noMargin">
+                                    <p>
                                         <span class="familyCardModalName"></span>
                                         (<span id="familyCardModalRelation"></span>)
                                     </p>
                                 </div>
                                 <div class="availableDiv">
                                     <span class="dot" id="availabilityDot"></span>
-                                    <p class="noMargin" id="availability"></p>
+                                    <p id="availability"></p>
                                 </div>
                             </section>
                             <section class="familyModalSection_cols_2 pt-3">
-                                <p class="noMargin">Location</p>
+                                <p>Location</p>
                                 <div class="availableDiv">
-                                    <p class="noMargin">icon</p>
-                                    <p class="noMargin" id="familyCardModalLocation"></p>
+                                    <p>icon</p>
+                                    <p id="familyCardModalLocation"></p>
                                 </div>
                             </section>
                             <section class="familyModalSection_cols_1">
@@ -159,33 +159,15 @@
                 <div>
                     <div class="availableCardDivMe">
                         <span class="dot unknown"></span>
-                        <p class="noMargin">Available</p>
+                        <p>Available</p>
                     </div>
                 </div>
 
                 <label for="" class="form-label">How am I feeling today?</label>
                 <input type="text" class="form-control" id="" placeholder="&#9998; Tell me how you feel" required>
-
-                <!-- <div class="editProfile">
-                        <p>Edit</p>
-                        <div>
-                            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <path opacity="0.15" d="M8 16H12L18 10L14 6L8 12V16Z" fill="#000000"></path>
-                                    <path
-                                        d="M14 6L8 12V16H12L18 10M14 6L17 3L21 7L18 10M14 6L18 10M10 4L4 4L4 20L20 20V14"
-                                        stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                </g>
-                            </svg>
-                        </div>
-                    </div> -->
             </section>
             <!-- Everyone else -->
-            <div class="d-flex gap-3">
+            <div class="d-flex justify-content-between">
                 <div class="d-flex gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" id="Layer_2" data-name="Layer 2"
                         viewBox="0 0 50.22 50.22">
@@ -204,7 +186,7 @@
                     <h2>The Smith Family House</h2>
                 </div>
                 <div class="addNew">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" id="Layer_2" data-name="Layer 2"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" id="Layer_2" data-name="Layer 2"
                         viewBox="0 0 58.35 58.35">
                         <defs>
                             <style>
@@ -232,16 +214,21 @@
 
             <section class="familyCardContainer">
                 <div class="card familyCard" onclick="getNameOfFamilyMember('Sarah')">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Sarah</h5>
-                        <p class="relation noMargin">(Sister)</p>
-                    </div>
-                    <div class="card-body-2">
-                        <div class="availableCardDiv">
-                            <span class="dot available"></span>
-                            <p class="noMargin">Available</p>
+                    <img src="images/Sarah.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title">Sarah</h5>
+                            <p class="relation">(Sister)</p>
                         </div>
+                        <div>
+                            <div class="availableCardDiv">
+                                <span class="dot available"></span>
+                                <p>Available</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="status-message">"Work is crazy, skipping my Yoga class tonight"</p>
                     </div>
                     <div class="card-icons">
                         <div>
@@ -285,17 +272,21 @@
                     </div>
                 </div>
                 <div class="card familyCard" onclick="getNameOfFamilyMember('Alice')">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Alice</h5>
-                        <p class="relation noMargin">(Aunt)</p>
-
-                    </div>
-                    <div class="card-body-2">
-                        <div class="availableCardDiv">
-                            <span class="dot unavailable"></span>
-                            <p class="noMargin">Unavailable</p>
+                    <img src="images/Alice.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title">Alice</h5>
+                            <p class="relation">(Aunt)</p>
                         </div>
+                        <div>
+                            <div class="availableCardDiv">
+                                <span class="dot unavailable"></span>
+                                <p>Unavailable</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="status-message">"Up all night with the puppy, soooo tired"</p>
                     </div>
                     <div class="card-icons">
                         <div>
@@ -371,15 +362,18 @@
             </section>
             <section class="familyCardContainer">
                 <div class="card familyCard" onclick="getNameOfFamilyMember('Mom')">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <img src="images/Mom.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Mom</h5>
-                    </div>
-                    <div class="card-body-2">
-                        <div class="availableCardDiv">
-                            <span class="dot unknown"></span>
-                            <p class="noMargin">Unknown</p>
+                        <div>
+                            <div class="availableCardDiv">
+                                <span class="dot unknown"></span>
+                                <p>Unknown</p>
+                            </div>
                         </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="status-message">"Training for a 5k with Cindy!"</p>
                     </div>
                     <div class="card-icons">
                         <div>
@@ -448,13 +442,18 @@
                     </div>
                 </div>
                 <div class="card familyCard" onclick="getNameOfFamilyMember('Dad')">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <img src="images/Dad.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Dad</h5>
+                        <div>
+                            <div class="availableCardDiv">
+                                <span class="dot unknown"></span>
+                                <p>Unknown</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="availableCardDiv">
-                        <span class="dot unknown"></span>
-                        <p class="noMargin">Unknown</p>
+                    <div class="card-body">
+                        <p class="status-message">"Getting ready for a wrok trip to CA tomorrow"</p>
                     </div>
                     <div class="card-icons">
                         <!-- svgs came from https://www.svgrepo.com/svg/530233/weather -->
@@ -675,8 +674,8 @@
         familyMemberEvents.forEach(event => {
             html += '<div class="event"><div class="availableDiv">';
             html += '<svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"></path><path d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z" fill="#300604"></path><path d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z" fill="#300604"></path><path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"></path><path d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z" fill="#300604"></path><path d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z" fill="#300604"></path><path d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z" fill="#300604"></path><path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path><path d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z" fill="#300604"></path><path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"></path><path d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z" fill="#300604"></path><path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"></path><path d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z" fill="#228E9D"></path><path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"></path><path d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z" fill="#228E9D"></path><path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"></path><path d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z" fill="#228E9D"></path><path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"></path></g></svg>';
-            html += `<p class="noMargin">${event.eventDate}</p></div>`;
-            html += `<div class="ps-5"><p class="noMargin">${event.eventName}</p>`;
+            html += `<p>${event.eventDate}</p></div>`;
+            html += `<div class="ps-5"><p>${event.eventName}</p>`;
 
             let reminderBadge = '';
 

@@ -1,9 +1,6 @@
-:root {}
-
-
-/* GENERAL CLASSES */
-.noMargin {
-    margin: 0;
+:root {
+    --lightgray: rgb(252, 249, 249);
+    --blue: rgb(30, 155, 239);
 }
 
 /***************************************************************************************
@@ -68,6 +65,20 @@ ul a li p {
 p {
     line-height: 1.5rem;
     font-size: 15px;
+    margin: 0;
+    line-height: 1.5em;
+}
+
+nav ul li p {
+    color: white;
+}
+
+.availableCardDiv p {
+    font-size: 12px;
+}
+
+.status-message {
+    font-size: 12px;
 }
 
 .logo p {
@@ -86,12 +97,13 @@ p {
 }
 
 .relation {
-    font-style: italic;
     font-size: 15px;
+    color: gray;
 }
 
 .card-title {
     margin-bottom: 0;
+    color: var(--blue);
 }
 
 .card-small-text {
@@ -123,7 +135,7 @@ p {
  *****************************************************************************************/
 
 main {
-    margin: 8rem 0;
+    margin: 7rem 0;
     display: flex;
     flex-flow: column;
     /* align-items: center; */
@@ -134,12 +146,12 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    background-color: rgb(30, 155, 239);
+    background-color: var(--blue);
 }
 
 .logo {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .addNew {
@@ -159,6 +171,7 @@ header {
 
 nav {
     border-top: black solid 1px;
+    background-color: var(--blue);
 }
 
 nav ul {
@@ -208,13 +221,15 @@ nav ul {
 }
 
 .card {
-    box-shadow: 3px 5px rgba(202, 201, 201, 0.284);
+    /* box-shadow: 3px 5px rgba(202, 201, 201, 0.284); */
+    background-color: var(--lightgray);
     flex: 1 0 150px;
 }
 
-
 .card-body {
-    border-bottom: solid gray 1px;
+    border-bottom: solid lightgray 1px;
+    margin: 0px 5px;
+    padding: .5rem .5rem;
 }
 
 .card-icons {
@@ -361,4 +376,8 @@ nav ul {
 
 .familyCardModalProfilePic {
     border-radius: 10%;
+}
+
+.familyCard img {
+    padding: 5px;
 }
