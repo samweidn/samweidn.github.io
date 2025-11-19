@@ -189,6 +189,10 @@ nav ul {
     color: white;
 }
 
+.activeNavElem {
+    border-bottom: white 1px solid;
+}
+
 /* Media Query Section Styles */
 @media screen and (width >=768px) {
     .phonescreen {
