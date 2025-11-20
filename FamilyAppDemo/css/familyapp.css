@@ -157,12 +157,12 @@ nav ul li p {
 
 /* Buttons */
 
-.darkBlueBtn {
+.btn-primary {
     background-color: var(--dark-blue);
     border-color: var(--dark-blue);
 }
 
-.darkBlueBtn:hover {
+.btn-primary:hover {
     background-color: var(--blue);
     border-color: var(--blue);
 }
@@ -434,6 +434,7 @@ nav ul {
 
 .familyCardModalProfilePic {
     border-radius: 10%;
+    width: 50%;
 }
 
 .familyCard img {

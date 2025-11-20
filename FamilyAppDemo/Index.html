@@ -59,13 +59,13 @@
                         </div>
                         <div class="modal-body">
                             <section class="familyCardModalProfilePicDiv pb-3">
-                                <img class="familyCardModalProfilePic" src="images/account.jpg" alt="">
+                                <img id="familyCardModalProfilePic" class="familyCardModalProfilePic" src="" alt="">
                             </section>
                             <section class="familyModalSection_cols_2">
                                 <div>
                                     <p>
                                         <span class="familyCardModalName"></span>
-                                        (<span id="familyCardModalRelation"></span>)
+                                        <span id="familyCardModalRelation"></span>
                                     </p>
                                 </div>
                                 <div class="availableDiv">
@@ -76,7 +76,17 @@
                             <section class="familyModalSection_cols_2 pt-3">
                                 <p>Location</p>
                                 <div class="availableDiv">
-                                    <p>icon</p>
+                                    <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" id="Layer_2"
+                                        data-name="Layer 2" viewBox="0 0 31.09 38">
+                                        <g id="Layer_1-2" data-name="Layer 1">
+                                            <g>
+                                                <path
+                                                    d="M15.55,38C6.91,31.09,0,24.13,0,15.55S6.96,0,15.55,0s15.55,6.96,15.55,15.55-6.91,15.55-15.55,22.46"
+                                                    fill="#1d1d1b" />
+                                                <circle cx="15.55" cy="15.55" r="6.91" fill="#fff" />
+                                            </g>
+                                        </g>
+                                    </svg>
                                     <p id="familyCardModalLocation"></p>
                                 </div>
                             </section>
@@ -87,30 +97,7 @@
                                 <div>
                                     <h4>Todays Weather</h4>
                                     <div>
-                                        <svg width="45px" height="45px" viewBox="0 0 1024 1024" class="icon"
-                                            version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                            </g>
-                                            <g id="SVGRepo_iconCarrier">
-                                                <path
-                                                    d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
-                                                    fill="#F4CE26"></path>
-                                                <path
-                                                    d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
-                                                    fill="#333333"></path>
-                                                <path
-                                                    d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
-                                                    fill="#333333"></path>
-                                                <path
-                                                    d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
-                                                    fill="#FFFFFF"></path>
-                                                <path
-                                                    d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
-                                                    fill="#333333"></path>
-                                            </g>
-                                        </svg>
+                                        <span id="familyModalWeatherSVG"></span>
                                         <p id="familyModalWeather"></p>
                                     </div>
                                 </div>
@@ -135,7 +122,7 @@
                             <section class="familyModalSection_cols_1 pt-3">
                                 <div class="d-flex justify-content-between">
                                     <h4>Upcoming Events</h4>
-                                    <a href="calendarPerson.html" class="btn btn-primary btn-sm">View Calendar <svg
+                                    <!-- <a href="calendarPerson.html" class="btn btn-primary btn-sm">View Calendar <svg
                                             width="15px" height="15px" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -146,7 +133,7 @@
                                                 <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff" stroke-width="2"
                                                     stroke-linecap="round" stroke-linejoin="round"></path>
                                             </g>
-                                        </svg></a>
+                                        </svg></a> -->
                                 </div>
                                 <div id="events"></div>
                             </section>
@@ -239,25 +226,30 @@
                     </div>
                     <div class="card-icons">
                         <div>
-                            <svg width="25px" height="25px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <path d="M621.7 451.6m-129.5 0a129.5 129.5 0 1 0 259 0 129.5 129.5 0 1 0-259 0Z"
-                                        fill="#F4CE26"></path>
-                                    <path
-                                        d="M621.7 607.4c-85.9 0-155.8-69.9-155.8-155.8s69.9-155.8 155.8-155.8 155.8 69.9 155.8 155.8S707.6 607.4 621.7 607.4z m0-258.9c-56.8 0-103.1 46.2-103.1 103.1s46.3 103.1 103.1 103.1 103-46.3 103-103.2-46.2-103-103-103z"
-                                        fill="#333333"></path>
-                                    <path
-                                        d="M502.1 198c11.8-6.8 26.9-2.8 33.7 9l24.7 42.7c6.8 11.8 2.8 26.9-9 33.7-11.8 6.8-26.9 2.8-33.7-9l-24.7-42.7c-6.9-11.9-2.8-26.9 9-33.7zM807.8 406.4c3.5 13.2 17 21 30.2 17.4l47.6-12.8c13.2-3.5 21-17 17.4-30.2-3.5-13.2-17-21-30.2-17.4l-47.6 12.8c-13.1 3.5-20.9 17-17.4 30.2zM794.6 517.3c-3.5 13.2 4.3 26.7 17.4 30.2l47.6 12.8c13.2 3.5 26.7-4.3 30.2-17.4 3.5-13.2-4.3-26.7-17.4-30.2l-47.6-12.8c-13.1-3.5-26.6 4.3-30.2 17.4zM665.7 161.8c13.6 0 24.7 11 24.7 24.7v49.3c0 13.6-11 24.7-24.7 24.7-13.6 0-24.7-11-24.7-24.7v-49.3c0-13.6 11-24.7 24.7-24.7zM832.8 231.3c-9.6-9.6-25.2-9.6-34.9 0L763 266.2c-9.6 9.6-9.6 25.2 0 34.9 9.6 9.6 25.2 9.6 34.9 0l34.9-34.9c9.7-9.7 9.7-25.3 0-34.9z"
-                                        fill="#333333"></path>
-                                    <path
-                                        d="M264.5 740.8c-2.2 0.2-4.3 0.4-6.5 0.5-60.5 3.4-111-49.7-111-111s49.7-111 111-111c4.2 0 8.4 0.2 12.5 0.7-0.1-2.3-0.1-4.6-0.1-6.9 0-85.1 69-154.1 154.1-154.1 75.2 0 137.8 53.8 151.4 125 6.9-1.1 14-1.7 21.2-1.7 71.5 0 129.5 58 129.5 129.5-0.2 45.7-23.8 85.9-59.6 108.9-20.2 13-44.2 21.3-70 20.5-3.5-0.1-6.9-0.3-10.3-0.7-1.1 0.1-2.3 0.1-3.4 0.1H264.5z"
-                                        fill="#FFFFFF"></path>
-                                    <path
-                                        d="M252.4 767.8c-32.4 0-63.3-12.5-87.9-35.8-27.9-26.4-43.9-63.5-43.9-101.7 0-71.3 54.7-130.2 124.3-136.7 9.8-90.3 86.5-160.9 179.4-160.9 78.4 0 147 50.6 171.2 123.3h1.4c86 0 155.9 69.9 155.9 155.8 0 53.3-26.7 102.3-71.5 131.1-26.5 17.1-56.1 25.6-85.1 24.7-3.4-0.1-6.7-0.3-10-0.6-1 0-2 0.1-3 0.1H265.8c-2.1 0.2-4.2 0.4-6.3 0.5-2.4 0.1-4.7 0.2-7.1 0.2z m5.5-222.1c-46.6 0-84.6 38-84.6 84.6 0 23.8 10 46.9 27.4 63.4 15.7 14.9 35.7 22.5 55.7 21.2 1.7-0.1 3.5-0.2 5.2-0.4l2.8-0.2h324.9c2.8 0.3 5.6 0.5 8.4 0.6 23.2 0.8 42.8-8.5 54.9-16.4 29.8-19 47.5-51.4 47.5-86.7 0-56.8-46.3-103.1-103.1-103.1-5.7 0-11.4 0.5-16.9 1.4l-25.4 4.2-4.8-25.3c-11.5-60-64.2-103.6-125.5-103.6-70.5 0-127.8 57.3-127.8 127.8 0 1.9 0 3.8 0.1 5.7l1.4 30.9-30.7-3.5c-3.1-0.4-6.2-0.6-9.5-0.6z"
-                                        fill="#333333"></path>
+                            <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" id="Layer_2"
+                                data-name="Layer 2" viewBox="0 0 78.04 45.63">
+                                <defs>
+                                    <style>
+                                        .cls-4 {
+                                            stroke-linecap: round;
+                                        }
+
+                                        .cls-4,
+                                        .cls-5 {
+                                            fill: none;
+                                            stroke: #398ecd;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 3.21px;
+                                        }
+                                    </style>
+                                </defs>
+                                <g id="Layer_1-2" data-name="Layer 1">
+                                    <g>
+                                        <path class="cls-4"
+                                            d="M10.24,27.77h-1.4c-4,0-7.24-3.24-7.24-7.24s3.24-7.24,7.24-7.24c.31,0,.61.03.91.06.67-6.6,6.24-11.75,13.01-11.75,4.72,0,8.83,2.51,11.13,6.25" />
+                                        <path class="cls-5"
+                                            d="M66.47,24.09c-.43,0-.84.04-1.26.09-.92-9.08-8.59-16.18-17.92-16.18-7.83,0-14.47,5.01-16.96,11.98-1.18-.37-2.43-.58-3.73-.58-6.79,0-12.3,5.51-12.3,12.31s5.51,12.31,12.3,12.31h39.86c5.51,0,9.97-4.46,9.97-9.97s-4.46-9.97-9.97-9.97Z" />
+                                    </g>
                                 </g>
                             </svg>
                             <p class="card-small-text">65&#x00B0; Cloudy</p>
@@ -297,29 +289,25 @@
                     </div>
                     <div class="card-icons">
                         <div>
-                            <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" id="Layer_2"
-                                data-name="Layer 2" viewBox="0 0 78.04 45.63">
-                                <defs>
-                                    <style>
-                                        .cls-4 {
-                                            stroke-linecap: round;
-                                        }
-
-                                        .cls-4,
-                                        .cls-5 {
-                                            fill: none;
-                                            stroke: #398ecd;
-                                            stroke-miterlimit: 10;
-                                            stroke-width: 3.21px;
-                                        }
-                                    </style>
-                                </defs>
+                            <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" id="Layer_2"
+                                data-name="Layer 2" viewBox="0 0 65.35 51.45">
                                 <g id="Layer_1-2" data-name="Layer 1">
                                     <g>
-                                        <path class="cls-4"
-                                            d="M10.24,27.77h-1.4c-4,0-7.24-3.24-7.24-7.24s3.24-7.24,7.24-7.24c.31,0,.61.03.91.06.67-6.6,6.24-11.75,13.01-11.75,4.72,0,8.83,2.51,11.13,6.25" />
-                                        <path class="cls-5"
-                                            d="M66.47,24.09c-.43,0-.84.04-1.26.09-.92-9.08-8.59-16.18-17.92-16.18-7.83,0-14.47,5.01-16.96,11.98-1.18-.37-2.43-.58-3.73-.58-6.79,0-12.3,5.51-12.3,12.31s5.51,12.31,12.3,12.31h39.86c5.51,0,9.97-4.46,9.97-9.97s-4.46-9.97-9.97-9.97Z" />
+                                        <g>
+                                            <path
+                                                d="M36.21,32.91c0,1.85-1.32,3.01-2.95,3.01s-2.95-1.15-2.95-3.01,2.95-5.58,2.95-5.58c0,0,2.95,3.73,2.95,5.58Z"
+                                                fill="#0a6aad" />
+                                            <path
+                                                d="M26.04,40.62c0,2.47-1.76,4.01-3.94,4.01s-3.94-1.54-3.94-4.01,3.94-7.46,3.94-7.46c0,0,3.94,4.99,3.94,7.46Z"
+                                                fill="#0a6aad" />
+                                            <path
+                                                d="M46.99,46.58c0,3-2.14,4.87-4.78,4.87s-4.78-1.87-4.78-4.87,4.78-9.05,4.78-9.05c0,0,4.78,6.05,4.78,9.05Z"
+                                                fill="#0a6aad" />
+                                        </g>
+                                        <path
+                                            d="M13.91,37.63c-6.8,0-12.31-5.51-12.31-12.31s5.51-12.31,12.31-12.31c1.3,0,2.55.2,3.73.58C20.12,6.61,26.77,1.6,34.6,1.6c9.33,0,17,7.09,17.92,16.18.41-.05.83-.09,1.26-.09,5.51,0,9.97,4.46,9.97,9.97s-4.46,9.97-9.97,9.97h-4.32"
+                                            fill="none" stroke="#398ecd" stroke-linecap="round" stroke-miterlimit="10"
+                                            stroke-width="3.21" />
                                     </g>
                                 </g>
                             </svg>
@@ -595,12 +583,14 @@
     }
 
     function loadUpFamilyCardDetails(name) {
+        let familyCardImage = document.querySelector('#familyCardModalProfilePic');
         let familyCardNameElements = document.querySelectorAll('.familyCardModalName');
         let familyCardRelationElem = document.querySelector('#familyCardModalRelation');
         let availabilityDot = document.querySelector('#availabilityDot');
         let availabilityElem = document.querySelector('#availability');
         let locationElem = document.querySelector('#familyCardModalLocation');
         let weatherElem = document.querySelector('#familyModalWeather');
+        let weatherSVG = document.querySelector('#familyModalWeatherSVG');
         let headlineElems = document.querySelectorAll('.headline');
         let headlines = [];
         let scheduleElem = document.querySelector("#scheduleTable");
@@ -619,9 +609,34 @@
         }
 
         if (name == 'Sarah') {
-            familyCardRelationElem.innerText = 'Sister';
+            familyCardImage.src = 'images/Sarah.png'
+            familyCardRelationElem.innerText = '(Sister)';
             availabilityDot.classList.add('available');
             availabilityElem.innerText = 'Available';
+            var svg = '';
+            svg += '<svg width="60px" height="60px" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 78.04 45.63">' + '\n';
+            svg += '    <defs>' + '\n';
+            svg += '        <style>' + '\n';
+            svg += '            .cls-4 {' + '\n';
+            svg += '                stroke-linecap: round;' + '\n';
+            svg += '            }' + '\n';
+            svg += '            .cls-4, .cls-5 {' + '\n';
+            svg += '                fill: none;' + '\n';
+            svg += '                stroke: #398ecd;' + '\n';
+            svg += '                stroke-miterlimit: 10;' + '\n';
+            svg += '                stroke-width: 3.21px;' + '\n';
+            svg += '            }' + '\n';
+            svg += '        </style>' + '\n';
+            svg += '    </defs>' + '\n';
+            svg += '    <g id="Layer_1-2" data-name="Layer 1">' + '\n';
+            svg += '        <g>' + '\n';
+            svg += '            <path class="cls-4" d="M10.24,27.77h-1.4c-4,0-7.24-3.24-7.24-7.24s3.24-7.24,7.24-7.24c.31,0,.61.03.91.06.67-6.6,6.24-11.75,13.01-11.75,4.72,0,8.83,2.51,11.13,6.25"/>' + '\n';
+            svg += '            <path class="cls-5" d="M66.47,24.09c-.43,0-.84.04-1.26.09-.92-9.08-8.59-16.18-17.92-16.18-7.83,0-14.47,5.01-16.96,11.98-1.18-.37-2.43-.58-3.73-.58-6.79,0-12.3,5.51-12.3,12.31s5.51,12.31,12.3,12.31h39.86c5.51,0,9.97-4.46,9.97-9.97s-4.46-9.97-9.97-9.97Z"/>' + '\n';
+            svg += '        </g>' + '\n';
+            svg += '    </g>' + '\n';
+            svg += '</svg>' + '\n';
+
+            weatherSVG.innerHTML = svg;
             locationElem.innerText = 'New York, NY';
             map.setView([40.7128, -74.0060], 13);
             marker.setLatLng([40.7128, -74.0060]);
@@ -634,9 +649,26 @@
             scheduleItems.push({ name: 'Yoga', time: '6:00pm - 7:30pm' });
 
         } else if (name == 'Alice') {
-            familyCardRelationElem.innerText = 'Aunt';
+            familyCardImage.src = 'images/Alice.png'
+            familyCardRelationElem.innerText = '(Aunt)';
             availabilityDot.classList.add('unavailable');
             availabilityElem.innerText = 'Unavailable';
+
+            var svg = '';
+            svg += '<svg width="60px" height="60px" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 65.35 51.45">' + '\n';
+            svg += '  <g id="Layer_1-2" data-name="Layer 1">' + '\n';
+            svg += '    <g>' + '\n';
+            svg += '      <g>' + '\n';
+            svg += '        <path d="M36.21,32.91c0,1.85-1.32,3.01-2.95,3.01s-2.95-1.15-2.95-3.01,2.95-5.58,2.95-5.58c0,0,2.95,3.73,2.95,5.58Z" fill="#0a6aad"/>' + '\n';
+            svg += '        <path d="M26.04,40.62c0,2.47-1.76,4.01-3.94,4.01s-3.94-1.54-3.94-4.01,3.94-7.46,3.94-7.46c0,0,3.94,4.99,3.94,7.46Z" fill="#0a6aad"/>' + '\n';
+            svg += '        <path d="M46.99,46.58c0,3-2.14,4.87-4.78,4.87s-4.78-1.87-4.78-4.87,4.78-9.05,4.78-9.05c0,0,4.78,6.05,4.78,9.05Z" fill="#0a6aad"/>' + '\n';
+            svg += '      </g>' + '\n';
+            svg += '      <path d="M13.91,37.63c-6.8,0-12.31-5.51-12.31-12.31s5.51-12.31,12.31-12.31c1.3,0,2.55.2,3.73.58C20.12,6.61,26.77,1.6,34.6,1.6c9.33,0,17,7.09,17.92,16.18.41-.05.83-.09,1.26-.09,5.51,0,9.97,4.46,9.97,9.97s-4.46,9.97-9.97,9.97h-4.32" fill="none" stroke="#398ecd" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.21"/>' + '\n';
+            svg += '    </g>' + '\n';
+            svg += '  </g>' + '\n';
+            svg += '</svg>' + '\n';
+
+            weatherSVG.innerHTML = svg;
             locationElem.innerText = 'Boston, MA';
             map.setView([42.35, -71.05], 13);
             marker.setLatLng([42.35, -71.05]);
@@ -649,10 +681,45 @@
             scheduleItems.push({ name: 'Poker Night', time: '5:00pm - 8:30pm' });
 
         } else {
-            familyCardRelationElem.innerText = 'Mom';
+            // familyCardRelationElem.innerText = 'Mom';
+            if (name == 'Mom') {
+                familyCardImage.src = 'images/Mom.png';
+            }
+            else {
+                familyCardImage.src = 'images/Dad.png'
+            }
             availabilityDot.classList.add('unknown');
             availabilityElem.innerText = 'Unknown';
             locationElem.innerText = 'Austin, TX';
+            var svg = '';
+            svg += '<svg width="60px" height="60px" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 65.22 64.27">' + '\n';
+            svg += '    <defs>' + '\n';
+            svg += '        <style>' + '\n';
+            svg += '            .cls-3 {' + '\n';
+            svg += '                fill: none;' + '\n';
+            svg += '                stroke: #ff9800;' + '\n';
+            svg += '                stroke-linecap: round;' + '\n';
+            svg += '                stroke-miterlimit: 10;' + '\n';
+            svg += '                stroke-width: 3.21px;' + '\n';
+            svg += '            }' + '\n';
+            svg += '        </style>' + '\n';
+            svg += '    </defs>' + '\n';
+            svg += '    <g id="Layer_1-2" data-name="Layer 1">' + '\n';
+            svg += '        <g>' + '\n';
+            svg += '            <path class="cls-3" d="M19.41,31.19c0-7.45,5.91-13.49,13.2-13.49s13.2,6.04,13.2,13.49-5.91,13.49-13.2,13.49-13.2-6.04-13.2-13.49Z"/>' + '\n';
+            svg += '            <line class="cls-3" x1="32.61" y1="50.42" x2="32.61" y2="62.67"/>' + '\n';
+            svg += '            <line class="cls-3" x1="44.97" y1="45.92" x2="52.85" y2="55.3"/>' + '\n';
+            svg += '            <line class="cls-3" x1="51.55" y1="34.53" x2="63.61" y2="36.65"/>' + '\n';
+            svg += '            <line class="cls-3" x1="49.26" y1="21.57" x2="59.87" y2="15.45"/>' + '\n';
+            svg += '            <line class="cls-3" x1="39.18" y1="13.12" x2="43.37" y2="1.6"/>' + '\n';
+            svg += '            <line class="cls-3" x1="26.03" y1="13.12" x2="21.84" y2="1.61"/>' + '\n';
+            svg += '            <line class="cls-3" x1="15.96" y1="21.57" x2="5.34" y2="15.45"/>' + '\n';
+            svg += '            <line class="cls-3" x1="13.67" y1="34.53" x2="1.6" y2="36.66"/>' + '\n';
+            svg += '            <line class="cls-3" x1="20.25" y1="45.92" x2="12.37" y2="55.31"/>' + '\n';
+            svg += '        </g>' + '\n';
+            svg += '    </g>' + '\n';
+            svg += '</svg>' + '\n';
+            weatherSVG.innerHTML = svg;
             map.setView([30.27, -97.74], 13);
             marker.setLatLng([30.27, -97.74]);
             weatherElem.innerHTML = '80&#x00B0; Sunny';
