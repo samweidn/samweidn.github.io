@@ -16,7 +16,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- styles -->
-    <link rel="stylesheet" href="css/calendar.css">
     <link rel="stylesheet" href="css/familyapp.css">
 </head>
 <div class="phonescreen">
@@ -42,96 +41,7 @@
                 <h5>Upcoming Events</h5>
                 <div class="upcomingEventsTableContainer">
                     <table class="table">
-                        <tbody>
-                            <tr>
-                                <th scope="row">Soccer Game
-                                    <br>
-                                    <span class="thinText">Nov 10th, 2025</span>
-                                    <br>
-                                    <span class="btn btn-primary btn-sm reminderBadge"><a href="reminderNew.html"
-                                            onclick="getEventData(14)">set reminder <svg width="15px" height="15px"
-                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    </path>
-                                                </g>
-                                            </svg></a></span>
-                                </th>
-                                <td class="actionButtons">
-                                    <button type="button" class="btn btn-primary btn-sm mt-4">Ok</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Drivers License Test
-                                    <br>
-                                    <span class="thinText">Nov 16th, 2025</span>
-                                    <br>
-                                    <span class="btn btn-primary btn-sm reminderBadge"><a href="reminderNew.html"
-                                            onclick="getEventData(13)">set reminder <svg width="15px" height="15px"
-                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    </path>
-                                                </g>
-                                            </svg></a></span>
-                                </th>
-                                <td class="actionButtons">
-                                    <button type="button" class="btn btn-primary btn-sm mt-4">Ok</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Interview at Market and James
-                                    <br>
-                                    <span class="thinText">Nov 21st, 2025</span>
-                                    <br>
-                                    <span class="btn btn-primary btn-sm reminderBadge"><a href="reminderNew.html"
-                                            onclick="getEventData(11)">set reminder <svg width="15px" height="15px"
-                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    </path>
-                                                </g>
-                                            </svg></a></span>
-                                </th>
-                                <td class="actionButtons">
-                                    <button type="button" class="btn btn-primary btn-sm mt-4">Ok</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Thanksgiving @ Aunt Carol's
-                                    <br>
-                                    <span class="thinText">Nov 31st, 2025</span>
-                                    <br>
-                                    <span class="btn btn-primary btn-sm reminderBadge"><a href="reminderNew.html"
-                                            onclick="getEventData(12)">set reminder <svg width="15px" height="15px"
-                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#ffffff"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    </path>
-                                                </g>
-                                            </svg></a></span>
-                                </th>
-                                <td class="actionButtons">
-                                    <button type="button" class="btn btn-primary btn-sm mt-4">Ok</button>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="eventsTRContainer"></tbody>
                     </table>
                 </div>
             </div>
@@ -241,5 +151,78 @@
 </html>
 
 <script>
-    // TODO: write script that updates the UI to reflect the reminders that have already been made; idea is to get the list of allFamilyEvents and .filter(event => event.reminder == true) and then grab elements by the ID of the event and change the "Set reminder" btn to a badge "Reminder set"
+    setCalendarEvents();
+    function setCalendarEvents() {
+        let allFamilyMemberEvents = JSON.parse(sessionStorage.getItem('jsonAllFamilyMemberEvents'));
+        const sortedFamilyMemberEvents = sortEventsByDate(allFamilyMemberEvents);
+
+        const eventsTable = document.querySelector('#eventsTRContainer');
+
+        sortedFamilyMemberEvents.forEach(event => {
+
+            let reminderBadge = '';
+
+            if (event.reminderSet === true) {
+                reminderBadge = '<span class="badge bg-success reminderBadge">reminder set</span>';
+            } else {
+                reminderBadge = `
+                            <span class="btn btn-primary btn-sm reminderBadge">
+                                <a href="reminderNew.html" onclick="getEventData(${event.uniqueId})">
+                                    set reminder
+                                    <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path d="M7 17L17 7M17 7H8M17 7V16"
+                                                stroke="#ffffff" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </span>
+                        `;
+            }
+
+
+            const html = `
+                    <tr>
+                        <th scope="row">
+                            ${event.eventName}<br>
+                            <span class="thinText">${event.eventDate}</span><br>
+                           ${reminderBadge}
+                        </th>
+                        <td class="actionButtons">
+                            <button type="button" class="btn btn-primary btn-sm mt-4">Ok</button>
+                        </td>
+                    </tr>
+                    `;
+
+            eventsTable.insertAdjacentHTML('beforeend', html);
+
+        });
+
+    }
+
+    function getEventData(eventId) {
+        let familyMemberEvents = JSON.parse(sessionStorage.getItem("jsonAllFamilyMemberEvents"));
+        let familyMemberEvent = familyMemberEvents.filter(event => event.uniqueId == eventId);
+
+        const notificationDetails = {
+            notificationEvent: familyMemberEvent[0].eventName,
+            notificationDate: familyMemberEvent[0].eventDateValue,
+            notificationPerson: familyMemberEvent[0].familyMember,
+            notificationEventId: familyMemberEvent[0].uniqueId
+        }
+
+        let jsonNotificationDetails = JSON.stringify(notificationDetails);
+        sessionStorage.setItem("jsonNotificationDetails", jsonNotificationDetails);
+    }
+
+    function sortEventsByDate(events) {
+        return events.sort((a, b) => {
+            const dateA = new Date(a.eventDateValue);
+            const dateB = new Date(b.eventDateValue);
+            return dateA - dateB; // earliest first
+        });
+    }
 </script>
