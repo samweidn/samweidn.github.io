@@ -174,7 +174,40 @@
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    var marker = L.marker([40.7128, -74.0060]).addTo(map);
-    var marker = L.marker([42.35, -71.05]).addTo(map);
-    var marker = L.marker([30.27, -97.74]).addTo(map);
+
+    //ICONS
+    var sarahIcon = L.icon({
+        iconUrl: 'images/SarahMapIcon.png',
+
+        iconSize: [60, 64], // size of the icon
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    });
+
+    var aliceIcon = L.icon({
+        iconUrl: 'images/AliceMapIcon.png',
+
+        iconSize: [60, 64], // size of the icon
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    });
+
+    var momIcon = L.icon({
+        iconUrl: 'images/MomMapIcon.png',
+
+        iconSize: [60, 64], // size of the icon
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    });
+
+    var dadIcon = L.icon({
+        iconUrl: 'images/DadMapIcon.png',
+
+        iconSize: [60, 64], // size of the icon
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    });
+
+    // Markers
+    var marker = L.marker([40.7128, -74.0060], { icon: sarahIcon }).addTo(map);
+    var marker = L.marker([42.35, -71.05], { icon: aliceIcon }).addTo(map);
+    var marker = L.marker([30.27, -97.74], { icon: momIcon }).addTo(map);
+    var marker = L.marker([31.27, -97.74], { icon: dadIcon }).addTo(map);
+
 </script>

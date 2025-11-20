@@ -638,8 +638,15 @@
 
             weatherSVG.innerHTML = svg;
             locationElem.innerText = 'New York, NY';
+            var sarahIcon = L.icon({
+                iconUrl: 'images/SarahMapIcon.png',
+
+                iconSize: [60, 64], // size of the icon
+                iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            });
             map.setView([40.7128, -74.0060], 13);
             marker.setLatLng([40.7128, -74.0060]);
+            marker.setIcon(sarahIcon);
             weatherElem.innerHTML = '65&#x00B0; Cloudy';
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
@@ -670,8 +677,15 @@
 
             weatherSVG.innerHTML = svg;
             locationElem.innerText = 'Boston, MA';
+            var aliceIcon = L.icon({
+                iconUrl: 'images/AliceMapIcon.png',
+
+                iconSize: [60, 64], // size of the icon
+                iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            });
             map.setView([42.35, -71.05], 13);
             marker.setLatLng([42.35, -71.05]);
+            marker.setIcon(aliceIcon);
             weatherElem.innerHTML = '45&#x00B0; Rain';
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
             headlines.push('<a href="https://nbcboston.com/news/local/kamala-harris-medford-massachusetts-book-tour-chevalier-theatre/3845898/#:~:text=Stream%20NBC10%20Boston%20news%20for%20free%2C%2024/7%2C,in%20reverse—rewinding%20each%20moment%20and%20experiencing%20it">Kamala Harris in Mass. today to promote new book</a>');
@@ -684,9 +698,23 @@
             // familyCardRelationElem.innerText = 'Mom';
             if (name == 'Mom') {
                 familyCardImage.src = 'images/Mom.png';
+                var momIcon = L.icon({
+                    iconUrl: 'images/MomMapIcon.png',
+
+                    iconSize: [60, 64], // size of the icon
+                    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+                });
+                marker.setIcon(momIcon);
             }
             else {
                 familyCardImage.src = 'images/Dad.png'
+                var dadIcon = L.icon({
+                    iconUrl: 'images/DadMapIcon.png',
+
+                    iconSize: [60, 64], // size of the icon
+                    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+                });
+                marker.setIcon(dadIcon);
             }
             availabilityDot.classList.add('unknown');
             availabilityElem.innerText = 'Unknown';
