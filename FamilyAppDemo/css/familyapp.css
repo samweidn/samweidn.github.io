@@ -1,7 +1,8 @@
 :root {
     --lightgray: rgb(245, 245, 245);
-    --blue: rgb(30, 155, 239);
+    --blue: #398ecd;
     --blue-active: rgb(23, 122, 188);
+    --dark-blue: #075081;
 }
 
 /***************************************************************************************
@@ -16,17 +17,22 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: "Cormorant", serif;
+    font-family: "Inter", sans-serif;
 }
 
 p,
+a,
 ul,
 li,
 th,
 td,
 label,
 .dt-input {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Inter", sans-serif;
+}
+
+nav ul a li p {
+    font-family: "Inter", sans-serif;
 }
 
 /* Individual Styles */
@@ -36,7 +42,7 @@ h1 {
 }
 
 h2 {
-    font-size: 25px;
+    font-size: 20px;
     margin: 0;
 }
 
@@ -71,7 +77,8 @@ p {
 }
 
 nav ul li p {
-    color: whitesmoke;
+    color: #075081;
+    font-weight: bold;
 }
 
 .availableCardDiv p {
@@ -120,15 +127,44 @@ nav ul li p {
 }
 
 .unavailable {
-    background-color: red;
+    background-color: #de061a;
 }
 
 .available {
-    background-color: green;
+    background-color: #4fb443;
 }
 
 .unknown {
     background-color: gray;
+}
+
+/* Family Colors */
+.sarah {
+    border-left: 4px solid #35C1AA;
+}
+
+.mom {
+    border-left: 4px solid #A80051;
+}
+
+.dad {
+    border-left: 4px solid #E5D207
+}
+
+.alice {
+    border-left: 4px solid #FF9800;
+}
+
+/* Buttons */
+
+.darkBlueBtn {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.darkBlueBtn:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
 }
 
 /**************************************************************************************
@@ -140,7 +176,7 @@ main {
     display: flex;
     flex-flow: column;
     /* align-items: center; */
-    gap: 3rem;
+    gap: 1rem;
 }
 
 header {
@@ -148,6 +184,12 @@ header {
     justify-content: space-between;
     padding: 1rem;
     background-color: var(--blue);
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
@@ -168,6 +210,7 @@ header {
 
 .accountDiv p {
     margin: 0;
+    color: white;
 }
 
 nav {
@@ -178,6 +221,7 @@ nav ul {
     display: flex;
     justify-content: space-around;
     padding: 0;
+    padding-top: 8px;
 }
 
 .activeNav {
@@ -187,10 +231,6 @@ nav ul {
     border-radius: 5px; */
     font-weight: bold;
     color: white;
-}
-
-.activeNavElem {
-    border-bottom: white 1px solid;
 }
 
 /* Media Query Section Styles */
@@ -234,7 +274,7 @@ nav ul {
 }
 
 .card {
-    /* box-shadow: 3px 5px rgba(202, 201, 201, 0.284); */
+    border: none;
     background-color: var(--lightgray);
     flex: 1 0 150px;
 }
@@ -380,9 +420,10 @@ nav ul {
     border-radius: 50%;
 }
 
-/* .logo img {
-    width: 25%;
-} */
+.navSVG {
+    width: 25px;
+    height: 25px;
+}
 
 /* Family Page */
 
