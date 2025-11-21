@@ -229,12 +229,31 @@
 
         if (allReminders.length > 0) {
 
-
             // TODO: order by the date ascending
             // allReminders.sort((a, b) => a.date.getTime() - b.date.getTime());
 
             allReminders.forEach(reminder => {
-                var html = `<div class="ps-2 mb-3 border-start border-success border-4">`;
+                let borderleft = 'unknownPerson';
+
+                switch (reminder.who) {
+                    case "Alice":
+                        console.log('alice');
+                        borderleft = 'alice';
+                        break;
+                    case "Sarah":
+                        borderleft = 'sarah';
+                        break;
+                    case "Mom":
+                        borderleft = 'mom';
+                        break;
+                    case "Dad":
+                        borderleft = 'dad';
+                        break;
+                    case '':
+                        break;
+                }
+
+                var html = `<div class="ps-2 mb-3 ${borderleft}">`;
                 html += ` <section class="d-flex justify-content-between">`;
                 html += `<h5 class="noMargin">${reminder.name}</h5>`;
                 html += `<div class="d-flex">`;

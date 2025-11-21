@@ -50,7 +50,6 @@ h4 {
     font-size: 20px;
     margin-bottom: 5px;
     font-weight: bold;
-    /* color: var(--blue); */
 }
 
 li {
@@ -120,6 +119,24 @@ nav ul li p {
     font-size: 12px;
 }
 
+.headline a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.headline a:hover svg path,
+.headline a:hover,
+.headline a:active svg path,
+.headline a:active {
+    text-decoration: underline;
+    color: var(--dark-blue);
+    stroke: var(--dark-blue);
+}
+
+.headline {
+    border-bottom: 2px groove var(--blue);
+}
+
 /* Shapes */
 .dot {
     height: 12px;
@@ -155,6 +172,10 @@ nav ul li p {
 
 .alice {
     border-left: 4px solid #FF9800;
+}
+
+.unknownPerson {
+    border-left: 4px solid gray;
 }
 
 /* Buttons */
@@ -239,6 +260,7 @@ nav ul {
 @media screen and (width >=768px) {
     .phonescreen {
         max-width: 400px;
+        min-height: 844px;
         margin: 1rem auto;
         overflow: hidden;
         border: black solid 3px;
