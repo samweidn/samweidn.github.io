@@ -35,10 +35,10 @@
         <!-- MAIN CONTENT -->
         <main class="container">
             <div class="breadcrumbPageTitle">
-                <h2>My Calendar</h2>
+                <h1>Shared Calendar</h1>
             </div>
             <div>
-                <h5>Upcoming Events</h5>
+                <h4>Unread Events</h4>
                 <div class="upcomingEventsTableContainer">
                     <table class="table">
                         <tbody id="eventsTRContainer"></tbody>
@@ -47,6 +47,24 @@
             </div>
 
             <img class="embedCalendar" src="images/calendar.png" alt="">
+
+            <div>
+                <h4>My Events For November 7th</h4>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                Dinner at Mom + Dads
+                                <br><span class="thinText">6:30pm - 8:00pm</span>
+                            </th>
+                            <td class="actionButtons">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
 
         </main>
 
@@ -183,7 +201,7 @@
                         `;
             }
 
-
+            // svg from https://www.svgrepo.com/svg/485671/checkmark
             const html = `
                     <tr>
                         <th scope="row">
@@ -192,7 +210,7 @@
                            ${reminderBadge}
                         </th>
                         <td class="actionButtons">
-                            <button type="button" class="btn btn-primary btn-sm mt-4">Ok</button>
+                            <button type="button" class="btn btn-primary btn-sm mt-4"><svg fill="#fff" width="25px" height="25px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>checkmark</title> <path d="M16 3c-7.18 0-13 5.82-13 13s5.82 13 13 13 13-5.82 13-13-5.82-13-13-13zM23.258 12.307l-9.486 9.485c-0.238 0.237-0.623 0.237-0.861 0l-0.191-0.191-0.001 0.001-5.219-5.256c-0.238-0.238-0.238-0.624 0-0.862l1.294-1.293c0.238-0.238 0.624-0.238 0.862 0l3.689 3.716 7.756-7.756c0.238-0.238 0.624-0.238 0.862 0l1.294 1.294c0.239 0.237 0.239 0.623 0.001 0.862z"></path> </g></svg></button>
                         </td>
                     </tr>
                     `;

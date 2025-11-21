@@ -37,7 +37,7 @@ nav ul a li p {
 
 /* Individual Styles */
 h1 {
-    font-size: 75px;
+    font-size: 25px;
     margin: 0;
 }
 
@@ -49,6 +49,8 @@ h2 {
 h4 {
     font-size: 20px;
     margin-bottom: 5px;
+    font-weight: bold;
+    /* color: var(--blue); */
 }
 
 li {

@@ -149,14 +149,23 @@
             <!-- FAMILY CARDS -->
             <section class="border-bottom pb-3">
                 <!-- Me -->
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between p-2">
                     <label for="" class="form-label">How am I feeling today?</label>
-                    <div class="availableCardDivMe">
+                    <!-- <div class="availableCardDivMe">
                         <span class="dot unknown"></span>
                         <p>Available</p>
+                    </div> -->
+                    <div style="width: 40%;" class="availableCardDivMe">
+                        <span id="availabilityDotMe" style="width: 10%;" class="dot unknown"></span>
+                        <select id="selctAvailability" onchange="changeAvailabilityDotColorMe()"
+                            class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option value="unknown" selected>Unknown</option>
+                            <option value="available">Available</option>
+                            <option value="unavailable">Unavailable</option>
+                        </select>
                     </div>
-                </div>
 
+                </div>
                 <input type="text" class="form-control status-unfocused" id="statusMe"
                     placeholder="&#9998; Tell me how you feel" required>
             </section>
@@ -562,6 +571,18 @@
 </html>
 
 <script>
+
+    function changeAvailabilityDotColorMe() {
+        let availableDotColor = document.querySelector('#selctAvailability').value;
+        let availabilityDot = document.querySelector('#availabilityDotMe');
+        let availableDotClassList = Array.from(availabilityDot.classList);
+
+        if (availableDotClassList.length > 1) {
+            let lastClass = availableDotClassList.pop();
+            availabilityDot.classList.remove(lastClass);
+        }
+        availabilityDot.classList.add(availableDotColor);
+    }
 
     // Modal Bootstrap 5
     const familyCardModal = new bootstrap.Modal(document.getElementById('familyCardModal'));
