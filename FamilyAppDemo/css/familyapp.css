@@ -442,3 +442,27 @@ nav ul {
 .familyCard img {
     padding: 5px;
 }
+
+
+.reminder-popover {
+    min-width: 220px;
+    padding: 4px;
+}
+
+.custom-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.popover-header {
+    background-color: var(--blue);
+    border-bottom: none;
+    color: white;
+}

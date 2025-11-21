@@ -15,8 +15,13 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <!-- styles -->
     <link rel="stylesheet" href="css/familyapp.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
 <div class="phonescreen">
 
@@ -81,7 +86,6 @@
                 </div>
             </div>
         </main>
-
         <!-- NAVIGATION -->
         <nav class="fixed-bottom">
             <ul>
@@ -148,7 +152,8 @@
                         <p>Calendar</p>
                     </li>
                 </a>
-                <a href="reminder.html">
+                <a href="reminder.html" id="popoverAlert" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus"
+                    data-bs-html="true" title="Reminder" data-bs-content="Interview at Market and James <br> hi">
                     <li>
                         <svg class="navSVG" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2"
                             viewBox="0 0 71.63 71.49">
@@ -186,6 +191,11 @@
 </html>
 
 <script>
+    var popover = new bootstrap.Popover(document.querySelector('#popoverAlert'), {
+        trigger: 'manual',
+        sanitize: false
+    });
+
     function getEventData(eventId) {
         let notificationDetails = {};
 
@@ -217,33 +227,81 @@
 
         const allReminders = JSON.parse(sessionStorage.getItem('jsonReminders'));
 
-        // TODO: order by the date ascending
-        // allReminders.sort((a, b) => a.date.getTime() - b.date.getTime());
+        if (allReminders.length > 0) {
 
-        allReminders.forEach(reminder => {
-            var html = `<div class="ps-2 mb-3 border-start border-success border-4">`;
-            html += ` <section class="d-flex justify-content-between">`;
-            html += `<h5 class="noMargin">${reminder.name}</h5>`;
-            html += `<div class="d-flex">`;
-            html += `<p class="me-2 noMargin">&#9998;</p>`;
-            html += `<p class="noMargin">&#128465;</p>`;
-            html += `</div></section>`;
-            html += `<section class="d-flex justify-content-between ms-2 me-2">`;
-            html += `<p class="noMargin">${reminder.who}</p>`;
-            html += `<p class="noMargin">${reminder.date}</p>`;
-            html += `</section>`;
-            html += `<section class="d-flex justify-content-between ms-2 me-2">`;
-            html += `<p class="noMargin">${reminder.contactmethod}</p>`;
-            html += `<p class="noMargin">${reminder.frequency}</p>`;
-            html += `</section>`;
-            html += `<section class="d-flex justify-content-between ms-2 me-2">`;
-            html += ` <p class="noMargin">${reminder.linkedevent}</p>`;
-            html += ` </section></div>`;
 
-            var reminderContainer = document.querySelector('#renindersContainer');
-            reminderContainer.insertAdjacentHTML('afterbegin', html);
+            // TODO: order by the date ascending
+            // allReminders.sort((a, b) => a.date.getTime() - b.date.getTime());
 
-        });
+            allReminders.forEach(reminder => {
+                var html = `<div class="ps-2 mb-3 border-start border-success border-4">`;
+                html += ` <section class="d-flex justify-content-between">`;
+                html += `<h5 class="noMargin">${reminder.name}</h5>`;
+                html += `<div class="d-flex">`;
+                html += `<p class="me-2 noMargin">&#9998;</p>`;
+                html += `<p class="noMargin">&#128465;</p>`;
+                html += `</div></section>`;
+                html += `<section class="d-flex justify-content-between ms-2 me-2">`;
+                html += `<p class="noMargin">${reminder.who}</p>`;
+                html += `<p class="noMargin">${reminder.date}</p>`;
+                html += `</section>`;
+                html += `<section class="d-flex justify-content-between ms-2 me-2">`;
+                html += `<p class="noMargin">${reminder.contactmethod}</p>`;
+                html += `<p class="noMargin">${reminder.frequency}</p>`;
+                html += `</section>`;
+                html += `<section class="d-flex justify-content-between ms-2 me-2">`;
+                html += ` <p class="noMargin">${reminder.linkedevent}</p>`;
+                html += ` </section></div>`;
+
+                var reminderContainer = document.querySelector('#renindersContainer');
+                reminderContainer.insertAdjacentHTML('afterbegin', html);
+
+                let popoverElem = document.querySelector('#popoverAlert');
+
+                popoverHTML = `
+            <div class="reminder-popover">
+                <!-- Body -->
+                <div>
+                    <div>
+                        <p class="fw-bold m-0">${reminder.name}</p>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <p class="text-muted m-0">${reminder.contactmethod}</p>
+                        <p class="m-0">${formatTime24to12(reminder.time)}</p>
+                    </div>
+                    <div class="mt-2">
+                        <p class="m-0">
+                            <i class="bi bi-link-45deg"></i>
+                            ${reminder.linkedevent}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            `;
+
+                let pop = bootstrap.Popover.getInstance(popoverElem);
+                pop.setContent({
+                    '.popover-body': popoverHTML,
+                    '.popover-header': `<div class="d-flex justify-content-between"><div><i class="bi bi-bell-fill me-2"></i>Reminder</div><button type="button" class="custom-close" onclick="bootstrap.Popover.getInstance(document.querySelector('#popoverAlert')).hide()">&times;</button></div>`
+                });
+
+            });
+
+            setTimeout(function () {
+                popover.show(); // Manually show the popover after the delay
+            }, 5000);
+
+        }
+
+        function formatTime24to12(timeString) {
+            let [hour, minute] = timeString.split(':').map(Number);
+
+            const suffix = hour >= 12 ? "pm" : "am";
+            hour = hour % 12 || 12;  // convert 0 → 12, 13 → 1, etc.
+
+            return `${hour}:${minute.toString().padStart(2, '0')}${suffix}`;
+        }
 
     }
 </script>
