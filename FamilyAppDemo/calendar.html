@@ -188,7 +188,7 @@
                 reminderBadge = '<span class="badge bg-success reminderBadge">reminder set</span>';
             } else {
                 reminderBadge = `
-                            <span class="btn btn-primary btn-sm reminderBadge">
+                            <span class="btn btn-primary btn-sm mt-2 reminderBadge">
                                 <a href="reminderNew.html" onclick="getEventData(${event.uniqueId})">
                                     set reminder
                                     <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -205,12 +205,23 @@
                         `;
             }
 
+            var familyEventColor = 'unknownPerson';
+
+            if (event.familyMember.length == 1) {
+                familyEventColor = (event.familyMember[0]).toLowerCase();
+            }
+
+            var familyMembersOnEvent = event.familyMember.join(', ');
+
             // svg from https://www.svgrepo.com/svg/485671/checkmark
             const html = `
-                    <tr id="row${event.uniqueId}" data-event-id="${event.uniqueId}">
+                    <tr id="row${event.uniqueId}" data-event-id="${event.uniqueId}" class="${familyEventColor}">
                         <th scope="row">
                             ${event.eventName}<br>
-                            <span class="thinText">${event.eventDate}</span><br>
+                            <p>
+                            <span class="thinText ">${familyMembersOnEvent}</span><br>
+                            <span class="thinText">${event.eventDate}</span>
+                            </p>
                            ${reminderBadge}
                         </th>
                         <td class="actionButtons">
