@@ -179,6 +179,19 @@ nav ul li p {
     border-left: 4px solid gray;
 }
 
+.sarahColor {
+    background-color: #35C1AA !important;
+}
+
+.momColor {
+    background-color: #A80051 !important;
+    color: white !important;
+}
+
+.aliceColor {
+    background-color: #FF9800 !important;
+}
+
 /* Buttons */
 
 .btn-primary {

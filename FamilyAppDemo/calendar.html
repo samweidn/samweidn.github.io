@@ -209,29 +209,36 @@
                         `;
             }
 
-            var familyEventColor = 'unknownPerson';
-
-            if (event.familyMember.length == 1) {
-                familyEventColor = (event.familyMember[0]).toLowerCase();
-            }
-
-            var familyMembersOnEvent = event.familyMember.join(', ');
+            var familyEventColor = event.madeBy.toLowerCase();
+            var familyEventNameColor = familyEventColor + 'Color';
 
             // svg from https://www.svgrepo.com/svg/485671/checkmark
             const html = `
-                    <tr id="row${event.uniqueId}" data-event-id="${event.uniqueId}" class="${familyEventColor}">
-                        <th scope="row">
-                            ${event.eventName}<br>
+                  <div id="row${event.uniqueId}" data-event-id="${event.uniqueId}"
+                        class="d-flex justify-content-between ${familyEventColor}">
+                        <section>
+                            <p class="fw-bold">${event.eventName}</p>
                             <p>
-                            <span class="thinText ">${familyMembersOnEvent}</span><br>
-                            <span class="thinText">${event.eventDate}</span>
+                                <span class="badge rounded-pill bg-light text-dark ${familyEventNameColor}">${event.madeBy}</span>
                             </p>
-                           ${reminderBadge}
-                        </th>
-                        <td class="actionButtons">
-                            <button onclick="removeRow(row${event.uniqueId})" type="button" class="btn btn-primary btn-sm mt-4"><svg fill="#fff" width="25px" height="25px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>checkmark</title> <path d="M16 3c-7.18 0-13 5.82-13 13s5.82 13 13 13 13-5.82 13-13-5.82-13-13-13zM23.258 12.307l-9.486 9.485c-0.238 0.237-0.623 0.237-0.861 0l-0.191-0.191-0.001 0.001-5.219-5.256c-0.238-0.238-0.238-0.624 0-0.862l1.294-1.293c0.238-0.238 0.624-0.238 0.862 0l3.689 3.716 7.756-7.756c0.238-0.238 0.624-0.238 0.862 0l1.294 1.294c0.239 0.237 0.239 0.623 0.001 0.862z"></path> </g></svg></button>
-                        </td>
-                    </tr>
+                            ${reminderBadge}
+                        </section>
+                        <section class="d-flex flex-column align-items-end w-50">
+                            <p>${event.eventDate}</p>
+                            <button onclick="removeRow(row${event.uniqueId})" type="button"
+                                class="btn btn-primary btn-sm mt-4"><svg fill="#fff" width="25px" height="25px"
+                                    viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <title>checkmark</title>
+                                        <path
+                                            d="M16 3c-7.18 0-13 5.82-13 13s5.82 13 13 13 13-5.82 13-13-5.82-13-13-13zM23.258 12.307l-9.486 9.485c-0.238 0.237-0.623 0.237-0.861 0l-0.191-0.191-0.001 0.001-5.219-5.256c-0.238-0.238-0.238-0.624 0-0.862l1.294-1.293c0.238-0.238 0.624-0.238 0.862 0l3.689 3.716 7.756-7.756c0.238-0.238 0.624-0.238 0.862 0l1.294 1.294c0.239 0.237 0.239 0.623 0.001 0.862z">
+                                        </path>
+                                    </g>
+                                </svg></button>
+                        </section>
+                    </div>
                     `;
 
             eventsTable.insertAdjacentHTML('beforeend', html);
